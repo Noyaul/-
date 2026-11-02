@@ -102,7 +102,7 @@ export function DeviceLock({
   const open = () => (work.phone.passcode ? setPinOpen(true) : onUnlock(""));
   return (
     <motion.div
-      className={"lock-screen device-lock " + (pinOpen ? "pin-open" : "")}
+      className={"lock-screen device-lock " + (pinOpen ? "pin-open" : "") + (work.phone.wallpaper === "custom-pair" ? " custom-passcode" : "")}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ y: -852, opacity: 0 }}
@@ -155,7 +155,7 @@ export function DeviceLock({
       ) : (
         <div className="device-passcode">
           <LockKeyhole size={22} />
-          <h2>输入密码</h2>
+          <h2>{work.phone.wallpaper === "custom-pair" ? "비밀번호 입력" : "输入密码"}</h2>
           <div
             className={"passcode-dots " + (error ? "pin-shake" : "")}
             aria-label={"已输入" + code.length + "位密码"}
