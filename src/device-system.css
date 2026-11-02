@@ -1328,12 +1328,12 @@
 
 /* Custom paired lock-screen and home-screen wallpapers. */
 .phone-screen.wallpaper-custom-pair {
-  background-image: url("./assets/custom-home.jpg");
+  background-image: url("/assets/custom-home.jpg");
   background-position: center;
   background-size: cover;
 }
 .phone-screen.wallpaper-custom-pair.is-locked {
-  background-image: url("./assets/custom-lockscreen.jpg");
+  background-image: url("/assets/custom-lockscreen.jpg");
   background-position: center;
   background-size: 100% 100%;
 }
@@ -1380,14 +1380,25 @@
 .phone-screen.wallpaper-custom-pair .device-passcode .pin-keypad button {
   width: 48px;
   height: 48px;
-  background: transparent;
-  color: transparent;
-  backdrop-filter: none;
+  background: #ffffff45;
+  color: #fff;
+  backdrop-filter: blur(8px);
+  border: 1px solid #ffffff22;
+  box-shadow: none;
 }
-.phone-screen.wallpaper-custom-pair .device-passcode .pin-keypad b,
-.phone-screen.wallpaper-custom-pair .device-passcode .pin-keypad small { visibility: hidden; }
+.phone-screen.wallpaper-custom-pair .device-passcode .pin-keypad b {
+  visibility: visible;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 400;
+}
+.phone-screen.wallpaper-custom-pair .device-passcode .pin-keypad small {
+  visibility: hidden;
+}
 .phone-screen.wallpaper-custom-pair .device-passcode .pin-keypad button:active {
-  background: #ffffff20;
+  background: #ffffff85;
+  transform: scale(.96);
 }
 .phone-screen.wallpaper-custom-pair .device-passcode .pin-keypad button[aria-label="密码键0"] {
   grid-column: 2;
