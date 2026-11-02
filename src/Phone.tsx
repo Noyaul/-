@@ -135,7 +135,7 @@ function PhoneRuntime({
   const [app, setApp] = useState("");
   const [homeRequest, setHomeRequest] = useState(0);
   const [locked, setLocked] = useState(!creator);
-  const [pinOpen, setPinOpen] = useState(false);
+  const [pinOpen, setPinOpen] = useState(!creator && !!work.phone.passcode);
   const [quickCamera, setQuickCamera] = useState(false);
   const [keyboard, setKeyboard] = useState(false);
   const [recent, setRecent] = useState<string[]>([]);
