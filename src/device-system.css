@@ -1328,12 +1328,12 @@
 
 /* Custom paired lock-screen and home-screen wallpapers. */
 .phone-screen.wallpaper-custom-pair {
-  background-image: url("/assets/custom-home.jpg");
+  background-image: url("./assets/custom-home.jpg");
   background-position: center;
   background-size: cover;
 }
 .phone-screen.wallpaper-custom-pair.is-locked {
-  background-image: url("/assets/custom-lockscreen.jpg");
+  background-image: url("./assets/custom-lockscreen.jpg");
   background-position: center;
   background-size: 100% 100%;
 }
