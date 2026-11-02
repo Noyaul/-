@@ -1328,17 +1328,16 @@
 
 /* Custom paired lock-screen and home-screen wallpapers. */
 .phone-screen.wallpaper-custom-pair {
-  background-image: url("/assets/custom-home.jpg");
+  background-image: url("./assets/custom-home.jpg");
   background-position: center;
   background-size: cover;
 }
 .phone-screen.wallpaper-custom-pair.is-locked {
-  background-image: url("/assets/custom-lockscreen.jpg");
+  background-image: url("./assets/custom-lockscreen.jpg");
   background-position: center;
   background-size: 100% 100%;
 }
 .phone-screen.wallpaper-custom-pair .wallpaper-orb { display: none; }
-.phone-screen.wallpaper-custom-pair.is-locked .status-bar { visibility: hidden; }
 .phone-screen.wallpaper-custom-pair .device-lock.custom-passcode.pin-open {
   background: transparent;
   backdrop-filter: none;
@@ -1372,7 +1371,7 @@
   top: 319px;
   left: 50%;
   transform: translateX(-50%);
-  width: 205px;
+  width: 185px;
   grid-template-columns: repeat(3, 48px);
   grid-auto-rows: 48px;
   justify-content: space-between;
