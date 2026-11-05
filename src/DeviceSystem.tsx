@@ -111,7 +111,7 @@ export function DeviceLock({
       {!pinOpen ? (
         <>
           <div className="lock-clock-block">
-            <LockKeyhole size={18} />
+            <h1>{time}</h1>
             <p>
               {new Intl.DateTimeFormat("ko-KR", {
                 month: "long",
@@ -122,7 +122,6 @@ export function DeviceLock({
                 new Date((work.phone.date || "2026-09-01") + "T12:00:00Z"),
               )}
             </p>
-            <h1>{time}</h1>
           </div>
           <div className="lock-notifications">
             {work.phone.notifications && (
