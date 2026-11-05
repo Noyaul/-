@@ -1404,3 +1404,89 @@
   grid-column: 2;
   grid-row: 4;
 }
+
+
+/* Player lock screen: horizontal clock/date row matching the supplied reference. */
+.phone-screen.wallpaper-custom-pair {
+  background-image: url("./assets/player-wallpaper.webp");
+  background-position: center;
+  background-size: cover;
+}
+.phone-screen.wallpaper-custom-pair.is-locked {
+  background-image: url("./assets/player-wallpaper.webp");
+  background-position: center;
+  background-size: cover;
+}
+.phone-screen.wallpaper-custom-pair .device-lock {
+  padding: 52px 24px 30px;
+  background: transparent;
+  color: #fff;
+  justify-content: flex-start;
+}
+.phone-screen.wallpaper-custom-pair .device-lock .lock-clock-block {
+  width: 100%;
+  margin: 0;
+  padding-top: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+  text-shadow: 0 1px 8px #0005;
+}
+.phone-screen.wallpaper-custom-pair .lock-clock-block h1 {
+  margin: 0;
+  font-size: 43px;
+  line-height: 1;
+  font-weight: 750;
+  letter-spacing: -1.8px;
+}
+.phone-screen.wallpaper-custom-pair .lock-clock-block p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 750;
+  letter-spacing: -.5px;
+}
+.phone-screen.wallpaper-custom-pair .lock-notifications {
+  margin-top: 38px;
+}
+.phone-screen.wallpaper-custom-pair .device-lock .unlock-handle {
+  margin-top: auto;
+}
+.phone-screen.wallpaper-custom-pair .device-lock .lock-tools {
+  margin-top: auto;
+  margin-bottom: 0;
+  padding: 0 22px 9px;
+}
+.phone-screen.wallpaper-custom-pair .device-lock .lock-tools button {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ffffff55;
+  background: #ffffff38;
+  color: #fff;
+  border-radius: 50%;
+  backdrop-filter: blur(12px);
+}
+.phone-screen.wallpaper-custom-pair .device-lock .lock-tools svg {
+  width: 25px;
+  height: 25px;
+}
+.phone-screen.wallpaper-custom-pair .device-lock .lock-notifications:empty {
+  display: none;
+}
+.phone-screen.wallpaper-custom-pair.is-locked .wallpaper-orb {
+  display: none;
+}
+@media (max-width: 430px) {
+  .phone-screen.wallpaper-custom-pair .device-lock {
+    padding-top: 62px;
+  }
+  .phone-screen.wallpaper-custom-pair .lock-clock-block h1 {
+    font-size: 39px;
+  }
+  .phone-screen.wallpaper-custom-pair .lock-clock-block p {
+    font-size: 18px;
+  }
+}
