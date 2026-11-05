@@ -413,8 +413,15 @@ export function CalendarSkin(p: Props) {
     [year, setYear] = useState(2026),
     [day, setDay] = useState(1);
   const prefix = `${year}-${String(month + 1).padStart(2, "0")}`;
-  const list = p.items.filter((i) =>
-    i.time.startsWith(`${prefix}-${String(day).padStart(2, "0")}`),
+  const isBirthday = (item: Item, targetDay: number) =>
+    meta(item, "birthday") === "true" &&
+    month === 8 &&
+    targetDay === 4 &&
+    item.time.slice(5, 10) === "09-04";
+  const list = p.items.filter(
+    (item) =>
+      item.time.startsWith(`${prefix}-${String(day).padStart(2, "0")}`) ||
+      isBirthday(item, day),
   );
   const move = (d: number) => {
     const date = new Date(Date.UTC(year, month + d, 1));
@@ -453,10 +460,11 @@ export function CalendarSkin(p: Props) {
               onClick={() => setDay(i + 1)}
             >
               {i + 1}
-              {p.items.some((x) =>
-                x.time.startsWith(
-                  `${prefix}-${String(i + 1).padStart(2, "0")}`,
-                ),
+              {p.items.some(
+                (item) =>
+                  item.time.startsWith(
+                    `${prefix}-${String(i + 1).padStart(2, "0")}`,
+                  ) || isBirthday(item, i + 1),
               ) && <i />}
             </button>
           ))}
@@ -466,13 +474,16 @@ export function CalendarSkin(p: Props) {
         </h4>
         {list.map((i) => (
           <button
-            className="calendar-event"
+            className={`calendar-event ${meta(i, "birthday") === "true" ? "birthday-event" : ""}`}
             key={i.id}
             onClick={() => p.onItem(i)}
           >
             <time>{i.time.slice(-5)}</time>
             <div>
               <strong>{i.title}</strong>
+              {meta(i, "birthday") === "true" && (
+                <span className="calendar-birthday-tag">生日</span>
+              )}
               <p>{meta(i, "location", i.body)}</p>
             </div>
           </button>
