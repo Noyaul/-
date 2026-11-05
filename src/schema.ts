@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { narrativeSchema } from "./story-engine/narrativeSchema";
 export const uid = () => crypto.randomUUID();
 export const itemSchema = z.object({
   id: z.string(),
@@ -127,6 +128,7 @@ export const workSchema = z.object({
     z.union([z.string(), z.number(), z.boolean()]),
   ),
   mode: z.enum(["explore", "story", "mixed"]),
+  narrative: narrativeSchema.optional(),
 });
 export type Work = z.infer<typeof workSchema>;
 export type UiValue = string | number | boolean | string[];
