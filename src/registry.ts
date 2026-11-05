@@ -1,5 +1,6 @@
 import {
   MessageCircle,
+  BookOpen,
   Phone,
   Users,
   Image,
@@ -67,6 +68,7 @@ const definitions: [
   ["safari", "Safari", "document", "#299bd5", Globe, ["书签", "历史记录"]],
   ["notes", "메모", "document", "#e8b53e", StickyNote, ["메모", "文件夹"]],
   ["calendar", "캘린더", "records", "#e96360", Calendar, ["日程", "캘린더"]],
+  ["story", "스토리", "document", "#718875", BookOpen, ["剧情", "章节"]],
   ["mail", "메일", "document", "#3985e8", Mail, ["收件箱", "草稿", "已发送"]],
   ["clock", "시계", "records", "#303236", Clock, ["闹钟", "世界时钟"]],
   [
