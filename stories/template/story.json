@@ -21,7 +21,7 @@
     "photos",
     {
       "id": "camera",
-      "name": "相机",
+      "name": "카메라",
       "installed": true,
       "visible": true,
       "dock": true,
