@@ -64,6 +64,13 @@ import {
 } from "./schema";
 import { dispatch, choose, visible, advance } from "./engine";
 import { db } from "./persistence";
+import {
+  completeRouteChapter,
+  completeSharedChapter,
+  getRouteChapterStatus,
+  getSharedChapterStatus,
+  type NarrativeProgress,
+} from "./story-engine/narrativeProgress";
 export function AppIcon({
   id,
   name,
@@ -477,6 +484,7 @@ function PhoneRuntime({
                     );
                   }}
                   work={work}
+                  onNarrativeProgress={(progress) => update({ ...runtimeRef.current, narrativeProgress: progress })}
                 />
               </AppWindow>
             ) : (
@@ -869,6 +877,7 @@ function AppContent({
   onSettings,
   onUi,
   work,
+  onNarrativeProgress,
 }: {
   app: AppPlugin;
   name: string;
@@ -882,6 +891,7 @@ function AppContent({
   onSettings?: () => void;
   onUi?: (key: string, value: UiValue) => void;
   work: Work;
+  onNarrativeProgress: (progress: NarrativeProgress) => void;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
@@ -922,6 +932,16 @@ function AppContent({
       : app.id === "whatsapp"
         ? WhatsAppSkin
         : (catalogSkins[app.id as keyof typeof catalogSkins] ?? null);
+  if (app.id === "story" && work.narrative && state.narrativeProgress) {
+    return (
+      <NarrativeHub
+        narrative={work.narrative}
+        progress={state.narrativeProgress}
+        onProgress={onNarrativeProgress}
+        onBack={onBack}
+      />
+    );
+  }
   const detailView = detail ? (
     <div className="phone-content detail-content">
       {detail.password && !creator && !unlocks.includes(detail.id) ? (
@@ -1301,6 +1321,166 @@ function AppContent({
     </>
   );
 }
+
+function NarrativeHub({
+  narrative,
+  progress,
+  onProgress,
+  onBack,
+}: {
+  narrative: NonNullable<Work["narrative"]>;
+  progress: NarrativeProgress;
+  onProgress: (progress: NarrativeProgress) => void;
+  onBack: () => void;
+}) {
+  const [selectedRoute, setSelectedRoute] = useState("");
+  const [activeChapter, setActiveChapter] = useState("");
+  const sharedActive = narrative.sharedChapters.find(
+    (chapter) => chapter.id === activeChapter,
+  );
+  const route = narrative.routes.find((item) => item.id === selectedRoute);
+  const routeActive = route?.chapters.find((chapter) => chapter.id === activeChapter);
+  const completedShared = progress.completedSharedChapters.length;
+  const totalShared = narrative.sharedChapters.length;
+  const discovered = narrative.characters.filter((character) =>
+    progress.discoveredCharacterIds.includes(character.id),
+  );
+  const cardStyle: CSSProperties = {
+    background: "#fff",
+    border: "1px solid #ece9e5",
+    borderRadius: 15,
+    padding: "14px 15px",
+    marginBottom: 10,
+  };
+  const buttonStyle: CSSProperties = {
+    border: 0,
+    borderRadius: 20,
+    background: "#283b32",
+    color: "#fff",
+    padding: "9px 15px",
+    fontSize: 12,
+    fontWeight: 600,
+  };
+  const statusLabel = (status: "locked" | "available" | "completed") =>
+    status === "completed" ? "已完成" : status === "available" ? "可阅读" : "未解锁";
+  const finishShared = () => {
+    if (!sharedActive) return;
+    onProgress(completeSharedChapter(narrative, progress, sharedActive.id));
+    setActiveChapter("");
+  };
+  const finishRoute = () => {
+    if (!route || !routeActive) return;
+    onProgress(completeRouteChapter(narrative, progress, route.id, routeActive.id));
+    setActiveChapter("");
+  };
+  return (
+    <div style={{ height: "100%", minHeight: 0, overflowY: "auto", background: "#f7f6f2", color: "#252923", padding: "0 16px 28px", boxSizing: "border-box" }}>
+      <div className="app-nav" style={{ margin: "0 -16px 14px", padding: "0 14px" }}>
+        <button onClick={selectedRoute || activeChapter ? () => { setSelectedRoute(""); setActiveChapter(""); } : onBack} aria-label="返回">
+          <ChevronLeft size={23} />
+        </button>
+        <strong>{activeChapter ? "章节内容" : selectedRoute ? route?.title : "恋爱攻略"}</strong>
+        <span style={{ width: 24 }} />
+      </div>
+      {activeChapter && (sharedActive || routeActive) ? (
+        <div style={{ paddingTop: 8 }}>
+          <p style={{ color: "#8b8d85", fontSize: 10, letterSpacing: 2, margin: "0 0 9px" }}>
+            {sharedActive ? "SHARED STORY" : "CHARACTER ROUTE"}
+          </p>
+          <h2 style={{ fontSize: 23, lineHeight: 1.35, margin: "0 0 16px", fontWeight: 650 }}>
+            {(sharedActive || routeActive)?.title}
+          </h2>
+          <div style={{ ...cardStyle, padding: 18, fontSize: 14, lineHeight: 1.85, whiteSpace: "pre-wrap" }}>
+            {(sharedActive || routeActive)?.summary || "这一章节的具体剧情内容正在准备中。"}
+          </div>
+          <p style={{ color: "#8b8d85", fontSize: 11, lineHeight: 1.7 }}>
+            阅读章节梗概后，可以记录本章进度。后续版本会在这里加入完整对话、场景与选择。
+          </p>
+          <button
+            style={buttonStyle}
+            onClick={sharedActive ? finishShared : finishRoute}
+          >
+            标记本章已读
+          </button>
+        </div>
+      ) : selectedRoute && route ? (
+        <div style={{ paddingTop: 4 }}>
+          <p style={{ color: "#8b8d85", fontSize: 11, margin: "0 0 14px" }}>
+            个人路线 · {route.chapters.filter((chapter) => getRouteChapterStatus(narrative, progress, route.id, chapter.id) === "completed").length}/{route.chapters.length} 章
+          </p>
+          {route.chapters.map((chapter) => {
+            const status = getRouteChapterStatus(narrative, progress, route.id, chapter.id);
+            return (
+              <div key={chapter.id} style={cardStyle}>
+                <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "center" }}>
+                  <strong style={{ fontSize: 14 }}>{String(chapter.order).padStart(2, "0")} · {chapter.title}</strong>
+                  <span style={{ color: status === "completed" ? "#66816c" : status === "available" ? "#9a7950" : "#aaa", fontSize: 10, whiteSpace: "nowrap" }}>{statusLabel(status)}</span>
+                </div>
+                {chapter.summary ? <p style={{ color: "#777a72", fontSize: 12, lineHeight: 1.65, margin: "8px 0 0" }}>{chapter.summary}</p> : null}
+                {status === "available" ? <button style={{ ...buttonStyle, marginTop: 10 }} onClick={() => setActiveChapter(chapter.id)}>阅读章节</button> : null}
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <>
+          <div style={{ ...cardStyle, background: "#e9eee8", border: 0, padding: 18 }}>
+            <p style={{ margin: "0 0 7px", color: "#6d7b6c", fontSize: 10, letterSpacing: 2 }}>YOUR STORY IN SEOUL</p>
+            <h2 style={{ fontSize: 21, margin: "0 0 8px" }}>从一次偶然开始</h2>
+            <p style={{ margin: 0, color: "#697267", fontSize: 12, lineHeight: 1.7 }}>
+              公共主线 {completedShared}/{totalShared} 章完成。随着故事推进，新的联系人和个人路线会逐步出现。
+            </p>
+            <div style={{ height: 5, borderRadius: 5, background: "#d5ddd3", marginTop: 13, overflow: "hidden" }}>
+              <div style={{ width: `${totalShared ? completedShared / totalShared * 100 : 0}%`, height: "100%", background: "#718875" }} />
+            </div>
+          </div>
+          <h3 style={{ fontSize: 14, margin: "20px 0 10px" }}>公共主线</h3>
+          {narrative.sharedChapters.map((chapter) => {
+            const status = getSharedChapterStatus(narrative, progress, chapter.id);
+            return (
+              <div key={chapter.id} style={cardStyle}>
+                <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "center" }}>
+                  <strong style={{ fontSize: 13 }}>{String(chapter.order).padStart(2, "0")} · {chapter.title}</strong>
+                  <span style={{ color: status === "completed" ? "#66816c" : status === "available" ? "#9a7950" : "#aaa", fontSize: 10, whiteSpace: "nowrap" }}>{statusLabel(status)}</span>
+                </div>
+                {chapter.summary ? <p style={{ color: "#777a72", fontSize: 11, lineHeight: 1.65, margin: "7px 0 0" }}>{chapter.summary}</p> : null}
+                {status === "available" ? <button style={{ ...buttonStyle, marginTop: 10 }} onClick={() => setActiveChapter(chapter.id)}>阅读章节</button> : null}
+              </div>
+            );
+          })}
+          <h3 style={{ fontSize: 14, margin: "22px 0 10px" }}>已发现的角色 · {discovered.length}/6</h3>
+          {discovered.length ? discovered.map((character) => (
+            <div key={character.id} style={{ ...cardStyle, display: "flex", gap: 12, alignItems: "center" }}>
+              <div style={{ width: 40, height: 40, borderRadius: 20, background: "#e8e8e1", display: "grid", placeItems: "center", fontSize: 15, color: "#6d756b" }}>{character.name.slice(0, 1)}</div>
+              <div><strong style={{ fontSize: 13 }}>{character.name}</strong><p style={{ margin: "4px 0 0", color: "#85877f", fontSize: 11, lineHeight: 1.5 }}>{character.bio}</p></div>
+            </div>
+          )) : <p style={{ ...cardStyle, color: "#85877f", fontSize: 12 }}>完成第一章后，认识的角色会显示在这里。</p>}
+          <h3 style={{ fontSize: 14, margin: "22px 0 10px" }}>个人路线</h3>
+          {narrative.routes.map((item) => {
+            const character = narrative.characters.find((person) => person.id === item.characterId);
+            const first = item.chapters[0];
+            const status = first ? getRouteChapterStatus(narrative, progress, item.id, first.id) : "locked";
+            return (
+              <button
+                key={item.id}
+                disabled={status === "locked"}
+                onClick={() => setSelectedRoute(item.id)}
+                style={{ ...cardStyle, width: "100%", textAlign: "left", opacity: status === "locked" ? 0.55 : 1, cursor: status === "locked" ? "not-allowed" : "pointer", color: "#252923" }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <strong style={{ fontSize: 13 }}>{character?.name || item.title}</strong>
+                  <span style={{ color: status === "locked" ? "#aaa" : "#718875", fontSize: 10 }}>{status === "locked" ? "完成公共主线后解锁" : "进入路线 →"}</span>
+                </div>
+                <p style={{ color: "#85877f", fontSize: 11, margin: "6px 0 0" }}>{item.title} · {item.chapters.length}章</p>
+              </button>
+            );
+          })}
+        </>
+      )}
+    </div>
+  );
+}
+
 function UsersIcon() {
   return <PhoneIcon size={17} />;
 }
