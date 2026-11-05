@@ -638,7 +638,7 @@ export function MymyInstagram(p: SkinProps) {
   );
 }
 export function MymyX(p: SkinProps) {
-  const [dark, setDark] = useSkinState<boolean>(p, "x-dark", true);
+  const [dark] = useSkinState<boolean>(p, "x-dark", true);
   const [tab, setTab] = useSkinState<string>(p, "mymyTab", "推荐"),
     [likes, setLikes] = useSkinState<string[]>(p, "mymyXLikes", []),
     [reposts, setReposts] = useSkinState<string[]>(p, "mymyXReposts", []),
