@@ -932,7 +932,7 @@ function AppContent({
       : app.id === "whatsapp"
         ? WhatsAppSkin
         : (catalogSkins[app.id as keyof typeof catalogSkins] ?? null);
-  if (app.id === "story" && work.narrative && state.narrativeProgress) {
+  if (app.id === "notes" && work.narrative && state.narrativeProgress) {
     return (
       <NarrativeHub
         narrative={work.narrative}
