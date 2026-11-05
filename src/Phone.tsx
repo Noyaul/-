@@ -115,6 +115,7 @@ function PhoneRuntime({
   deviceLayout,
   work,
   creator = false,
+  initiallyUnlocked = false,
   onEdit,
   onAdd,
   onSettings,
@@ -125,6 +126,7 @@ function PhoneRuntime({
   deviceLayout: ReturnType<typeof useDeviceLayout>;
   work: Work;
   creator?: boolean;
+  initiallyUnlocked?: boolean;
   onEdit?: (app: string, item: Item) => void;
   onAdd?: (app: string) => void;
   onSettings?: () => void;
@@ -134,8 +136,8 @@ function PhoneRuntime({
 }) {
   const [app, setApp] = useState("");
   const [homeRequest, setHomeRequest] = useState(0);
-  const [locked, setLocked] = useState(!creator);
-  const [pinOpen, setPinOpen] = useState(!creator && !!work.phone.passcode);
+  const [locked, setLocked] = useState(!creator && !initiallyUnlocked);
+  const [pinOpen, setPinOpen] = useState(!creator && !initiallyUnlocked && !!work.phone.passcode);
   const [quickCamera, setQuickCamera] = useState(false);
   const [keyboard, setKeyboard] = useState(false);
   const [recent, setRecent] = useState<string[]>([]);
