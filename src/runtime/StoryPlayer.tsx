@@ -60,7 +60,7 @@ function StoryPlayer() {
         const parsed = validateWork(x);
         // The public game always starts without a device PIN. Keep the authoring
         // work untouched and remove any legacy PIN from the runtime copy.
-        const w: Work = { ...parsed, phone: { ...parsed.phone, passcode: "" } };
+        const w: Work = { ...parsed, phone: { ...parsed.phone, passcode: "", wallpaper: "custom-pair" } };
         document.title =
           w.title === "捡手机" ? "捡手机" : w.title + " · 捡手机";
         setWork(w);
