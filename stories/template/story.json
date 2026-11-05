@@ -3,7 +3,7 @@
   "id": "ui-test-phone-v2",
   "title": "분실폰",
   "description": "화면 테스트용 · 스토리 없음",
-  "revision": 4,
+  "revision": 5,
   "phone": {
     "owner": "민준",
     "date": "2026-10-25",
