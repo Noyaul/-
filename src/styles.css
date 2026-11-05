@@ -4918,3 +4918,39 @@ label {
   background: #e34f58;
   transform: rotate(135deg);
 }
+
+
+/* Player birthday marker in the in-phone calendar. */
+.calendar-event.birthday-event {
+  border-left: 3px solid #e75d78;
+  padding-left: 9px;
+}
+.calendar-birthday-tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #ffe8ed;
+  color: #c63d5c;
+  font-size: 9px;
+  vertical-align: middle;
+}
+.x-player-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid #ffffff20;
+}
+.x-player-profile .catalog-avatar {
+  width: 52px;
+  height: 52px;
+  font-size: 21px;
+}
+.x-player-profile > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.x-player-profile strong { font-size: 14px; }
+.x-player-profile small { opacity: .65; font-size: 10px; }
