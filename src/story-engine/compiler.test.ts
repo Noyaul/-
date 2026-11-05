@@ -71,3 +71,52 @@ it("blank default has no story and needs no ending test", () => {
   expect(work.mode).toBe("explore");
   expect(testStory(story, work)).toEqual([]);
 });
+
+
+describe("six-route narrative structure", () => {
+  const blankNarrative = () => ({
+    characters: ["lead-1", "lead-2", "lead-3", "lead-4", "lead-5", "lead-6"].map((id) => ({ id })),
+    sharedChapters: [{ id: "shared-intro", order: 1 }],
+    routes: ["route-1", "route-2", "route-3", "route-4", "route-5", "route-6"].map((id, index) => ({
+      id,
+      characterId: `lead-${index + 1}`,
+      chapters: [{ id: `chapter-${index + 1}`, order: 1, prerequisites: ["shared-intro"] }],
+    })),
+  });
+
+  it("keeps legacy scripts compatible when narrative data is absent", () => {
+    const { work } = compileStory(copy());
+    expect(work.narrative).toBeUndefined();
+  });
+
+  it("compiles six fixed character slots and six independent route tracks", () => {
+    const source = copy();
+    Object.assign(source, { narrative: blankNarrative() });
+    const { story, work } = compileStory(source);
+    expect(story.narrative?.characters).toHaveLength(6);
+    expect(work.narrative?.routes).toHaveLength(6);
+    expect(work.narrative?.routes[5].chapters[0].prerequisites).toEqual(["shared-intro"]);
+  });
+
+  it("rejects duplicate slots, mismatched routes and cross-route prerequisites", () => {
+    const duplicate = copy();
+    const invalidSlots = blankNarrative();
+    invalidSlots.characters[1].id = "lead-1";
+    Object.assign(duplicate, { narrative: invalidSlots });
+    expect(() => compileStory(duplicate)).toThrow();
+
+    const crossRoute = copy();
+    const invalidPrerequisite = blankNarrative();
+    invalidPrerequisite.routes[0].chapters[0].prerequisites = ["chapter-2"];
+    Object.assign(crossRoute, { narrative: invalidPrerequisite });
+    expect(() => compileStory(crossRoute)).toThrow("属于其他路线");
+  });
+
+  it("requires reveal chapters to belong to the shared story", () => {
+    const source = copy();
+    const narrative = blankNarrative();
+    narrative.characters[0].revealAtChapterId = "chapter-1";
+    Object.assign(source, { narrative });
+    expect(() => compileStory(source)).toThrow("角色揭示章节必须属于公共主线");
+  });
+});
