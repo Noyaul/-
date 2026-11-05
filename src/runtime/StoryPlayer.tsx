@@ -23,7 +23,7 @@ function readProfile(workId: string): PlayerProfile | null {
       typeof value.nickname === "string" &&
       value.nickname.trim() &&
       typeof value.birthday === "string" &&
-      /^\\d{4}-\\d{2}-\\d{2}$/.test(value.birthday)
+      /^\d{4}-\d{2}-\d{2}$/.test(value.birthday)
     ) {
       return { nickname: value.nickname.trim(), birthday: value.birthday };
     }
