@@ -4130,3 +4130,36 @@
 .catalog-slot[hidden] {
   display: none;
 }
+
+
+/* Make the player's September 4 birthday unmistakable in the month grid. */
+.calendar-grid button.birthday-day,
+.calendar-grid button.birthday-day.selected {
+  z-index: 2;
+  color: #fff;
+  background: #e83f68;
+  font-weight: 800;
+  box-shadow: 0 0 0 3px #ffd5df, 0 2px 9px #d52d5b55;
+}
+.calendar-grid button.birthday-day::after {
+  content: "生日";
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  z-index: 3;
+  padding: 2px 4px;
+  border: 1px solid #fff;
+  border-radius: 7px;
+  background: #b91f4b;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.calendar-grid button.birthday-day > i {
+  width: 5px;
+  height: 5px;
+  bottom: 1px;
+  background: #fff;
+}
