@@ -7,7 +7,7 @@ import "./player.css";
 
 type PlayerProfile = {
   nickname: string;
-  birthday: string;
+  birthday: "09-04";
 };
 
 function profileKey(workId: string) {
@@ -19,13 +19,8 @@ function readProfile(workId: string): PlayerProfile | null {
     const raw = localStorage.getItem(profileKey(workId));
     if (!raw) return null;
     const value = JSON.parse(raw) as Partial<PlayerProfile>;
-    if (
-      typeof value.nickname === "string" &&
-      value.nickname.trim() &&
-      typeof value.birthday === "string" &&
-      /^\d{4}-\d{2}-\d{2}$/.test(value.birthday)
-    ) {
-      return { nickname: value.nickname.trim(), birthday: value.birthday };
+    if (typeof value.nickname === "string" && value.nickname.trim()) {
+      return { nickname: value.nickname.trim(), birthday: "09-04" };
     }
   } catch {
     // Ignore invalid or unavailable local profile data and ask the player again.
@@ -39,7 +34,6 @@ function StoryPlayer() {
   const [profile, setProfile] = useState<PlayerProfile | null>(null);
   const [profileReady, setProfileReady] = useState(false);
   const [nickname, setNickname] = useState("");
-  const [birthday, setBirthday] = useState("");
   const [formError, setFormError] = useState("");
 
   useEffect(() => {
@@ -76,16 +70,12 @@ function StoryPlayer() {
   const submitProfile = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const cleanNickname = nickname.trim();
-    if (!cleanNickname || !birthday) {
-      setFormError("请填写昵称和生日后继续。");
-      return;
-    }
-    if (birthday > new Date().toISOString().slice(0, 10)) {
-      setFormError("生日不能晚于今天。");
+    if (!cleanNickname) {
+      setFormError("请输入你的昵称后继续。");
       return;
     }
     if (!work) return;
-    const next = { nickname: cleanNickname, birthday };
+    const next: PlayerProfile = { nickname: cleanNickname, birthday: "09-04" };
     try {
       localStorage.setItem(profileKey(work.id), JSON.stringify(next));
     } catch {
@@ -96,13 +86,48 @@ function StoryPlayer() {
     setProfile(next);
   };
 
+  const playerWork = work && profile
+    ? (() => {
+        const year = work.phone.date?.slice(0, 4) || "2026";
+        const birthdayEvent = {
+          id: `player-birthday-${work.id}`,
+          title: `${profile.nickname}的生日`,
+          body: `今天是${profile.nickname}的生日！`,
+          richText: "",
+          meta: { birthday: "true", annual: "true" },
+          time: `${year}-09-04 00:00`,
+          sender: profile.nickname,
+          avatar: "",
+          kind: "event" as const,
+          media: "",
+          hidden: false,
+          unlock: "",
+          password: "",
+          folder: "生日",
+          favorite: false,
+          outgoing: false,
+          read: false,
+          likes: 0,
+          comments: [],
+        };
+        const calendar = (work.data.calendar ?? []).filter(
+          (item) => item.id !== birthdayEvent.id,
+        );
+        return {
+          ...work,
+          phone: { ...work.phone, owner: profile.nickname },
+          data: { ...work.data, calendar: [...calendar, birthdayEvent] },
+        };
+      })()
+    : work;
+
   return (
     <main className="story-runtime">
       {work ? (
         <>
           <Phone
             key={`${work.id}-${profile ? "unlocked" : "locked"}`}
-            work={work}
+            work={playerWork ?? work}
             initiallyUnlocked={!!profile}
           />
           {profileReady && !profile && (
@@ -116,7 +141,7 @@ function StoryPlayer() {
                 <p className="player-profile-eyebrow">A STORY ABOUT YOU</p>
                 <h1>在故事开始之前</h1>
                 <p className="player-profile-description">
-                  留下你的名字和生日，让这段故事从你开始。
+                  留下你希望使用的昵称，让这段故事从你开始。
                 </p>
 
                 <label htmlFor="player-nickname">你的昵称</label>
@@ -131,18 +156,6 @@ function StoryPlayer() {
                   onChange={(event) => setNickname(event.target.value)}
                   required
                   autoFocus
-                />
-
-                <label htmlFor="player-birthday">你的生日</label>
-                <input
-                  id="player-birthday"
-                  name="birthday"
-                  type="date"
-                  autoComplete="bday"
-                  max={new Date().toISOString().slice(0, 10)}
-                  value={birthday}
-                  onChange={(event) => setBirthday(event.target.value)}
-                  required
                 />
 
                 {formError && (
