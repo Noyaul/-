@@ -25,24 +25,24 @@ import { NavigationPage, useNavigation } from "./Navigation";
 type Row = [ComponentType<{ size?: number }>, string, string];
 const groups: Row[][] = [
   [
-    [Plane, "飞行模式", "#ff9500"],
-    [Wifi, "无线局域网", "#007aff"],
-    [Bluetooth, "蓝牙", "#007aff"],
-    [Signal, "蜂窝网络", "#34c759"],
-    [Link, "个人热点", "#65ce88"],
-    [Battery, "电池", "#34c759"],
+    [Plane, "에어플레인 모드", "#ff9500"],
+    [Wifi, "Wi-Fi", "#007aff"],
+    [Bluetooth, "블루투스", "#007aff"],
+    [Signal, "셀룰러", "#34c759"],
+    [Link, "개인용 핫스팟", "#65ce88"],
+    [Battery, "배터리", "#34c759"],
     [Globe, "VPN", "#007aff"],
   ],
   [
-    [Settings, "通用", "#8e8e93"],
-    [Accessibility, "辅助功能", "#007aff"],
-    [Image, "墙纸", "#32ade6"],
+    [Settings, "일반", "#8e8e93"],
+    [Accessibility, "손쉬운 사용", "#007aff"],
+    [Image, "배경화면", "#32ade6"],
   ],
   [
-    [Bell, "通知", "#ff3b30"],
-    [Volume2, "声音与触感", "#ff2d55"],
-    [Moon, "专注模式", "#5856d6"],
-    [Shield, "面容 ID 与密码", "#34c759"],
+    [Bell, "알림", "#ff3b30"],
+    [Volume2, "사운드 및 햅틱", "#ff2d55"],
+    [Moon, "집중 모드", "#5856d6"],
+    [Shield, "Face ID 및 암호", "#34c759"],
   ],
 ];
 export function NativeSettings({
@@ -79,31 +79,31 @@ export function NativeSettings({
   );
   const sub = () => {
     switch (nav.page) {
-      case "通用":
+      case "일반":
         return (
           <div className="settings-group">
-            {row("关于本机", "", () => nav.push("关于本机"))}
-            {row("软件更新", "iOS 18.0", () => nav.push("软件更新"))}
-            {row("iPhone 储存空间", "", () => nav.push("iPhone 储存空间"))}
-            {row("日期与时间", "", () => nav.push("日期与时间"))}
-            {row("语言与地区", "简体中文", () => nav.push("语言与地区"))}
+            {row("정보", "", () => nav.push("정보"))}
+            {row("소프트웨어 업데이트", "iOS 18.0", () => nav.push("소프트웨어 업데이트"))}
+            {row("iPhone 저장 공간", "", () => nav.push("iPhone 저장 공간"))}
+            {row("날짜 및 시간", "", () => nav.push("날짜 및 시간"))}
+            {row("언어 및 지역", "한국어", () => nav.push("언어 및 지역"))}
           </div>
         );
-      case "关于本机":
+      case "정보":
         return (
           <div className="settings-group">
-            {row("名称", work.phone.owner + "的 iPhone")}
+            {row("이름", work.phone.owner + "의 iPhone")}
             {row("iOS 版本", "18.0")}
-            {row("机型名称", "iPhone 15 Pro")}
-            {row("照片", String(work.data.photos?.length || 0))}
+            {row("모델명", "iPhone 15 Pro")}
+            {row("사진", String(work.data.photos?.length || 0))}
             {row(
-              "应用程序",
+              "앱",
               String(work.apps.filter((a) => a.installed).length),
             )}
           </div>
         );
       case "Wi-Fi":
-      case "无线局域网":
+      case "Wi-Fi":
         return (
           <>
             <div className="settings-group">
@@ -126,38 +126,38 @@ export function NativeSettings({
             )}
           </>
         );
-      case "蓝牙":
+      case "블루투스":
         return (
           <>
             <div className="settings-group">
-              {toggle("蓝牙", bluetooth, setBluetooth)}
+              {toggle("블루투스", bluetooth, setBluetooth)}
             </div>
             <p className="settings-page-caption">
-              {bluetooth ? "我的设备" : "蓝牙已关闭"}
+              {bluetooth ? "나의 기기" : "블루투스가 꺼져 있음"}
             </p>
           </>
         );
-      case "电池":
+      case "배터리":
         return (
           <>
             <div className="settings-group">
-              {row("电池电量", work.phone.battery + "%")}
-              {toggle("低电量模式", lowPower, setLowPower)}
+              {row("배터리 잔량", work.phone.battery + "%")}
+              {toggle("저전력 모드", lowPower, setLowPower)}
             </div>
             <p className="settings-page-caption">
               低电量模式仅改变虚拟设备状态。
             </p>
           </>
         );
-      case "日期与时间":
+      case "날짜 및 시간":
         return (
           <div className="settings-group">
-            {row("日期", work.phone.date || "2026-09-01")}
-            {row("时间", work.phone.time)}
-            {row("时区", "中国标准时间")}
+            {row("날짜", work.phone.date || "2026-09-01")}
+            {row("시간", work.phone.time)}
+            {row("시간대", "한국 표준시")}
           </div>
         );
-      case "iPhone 储存空间":
+      case "iPhone 저장 공간":
         return (
           <div className="settings-group">
             {work.apps
@@ -165,7 +165,7 @@ export function NativeSettings({
               .map((a) => row(a.name, `${work.data[a.id]?.length || 0} 项`))}
           </div>
         );
-      case "软件更新":
+      case "소프트웨어 업데이트":
         return (
           <p className="settings-page-caption">
             iOS 18.0 · 此为作品中的虚拟系统，不下载系统更新。
@@ -177,10 +177,10 @@ export function NativeSettings({
             <div className="settings-group">
               {row(
                 nav.page,
-                nav.page === "面容 ID 与密码"
+                nav.page === "Face ID 및 암호"
                   ? work.phone.passcode
-                    ? "已设置密码"
-                    : "未设置密码"
+                    ? "암호 설정됨"
+                    : "암호 설정 안 됨"
                   : "",
               )}
             </div>
@@ -196,7 +196,7 @@ export function NativeSettings({
       <NavigationPage
         page={nav.page}
         back={nav.pop}
-        title={nav.depth > 1 ? "通用" : "设置"}
+        title={nav.depth > 1 ? "일반" : "설정"}
       >
         {nav.page ? (
           sub()
@@ -224,13 +224,13 @@ export function NativeSettings({
                     <div
                       key={name}
                       className="settings-native-row"
-                      role={name === "飞行模式" ? undefined : "button"}
-                      tabIndex={name === "飞行模式" ? undefined : 0}
+                      role={name === "에어플레인 모드" ? undefined : "button"}
+                      tabIndex={name === "에어플레인 모드" ? undefined : 0}
                       onKeyDown={(e) => {
                         if (e.key === "Enter") nav.push(name);
                       }}
                       onClick={() => {
-                        if (name !== "飞行模式") nav.push(name);
+                        if (name !== "에어플레인 모드") nav.push(name);
                       }}
                     >
                       <span
@@ -240,27 +240,27 @@ export function NativeSettings({
                         <Icon size={21} />
                       </span>
                       <span>{name}</span>
-                      {name === "飞行模式" ? (
+                      {name === "에어플레인 모드" ? (
                         <IOSToggle
-                          label="飞行模式"
+                          label="에어플레인 모드"
                           checked={airplane}
                           onChange={setAirplane}
                         />
                       ) : (
                         <>
                           <small>
-                            {name === "无线局域网"
+                            {name === "Wi-Fi"
                               ? wifi
-                                ? "未连接"
-                                : "关闭"
-                              : name === "蓝牙"
+                                ? "연결 안 됨"
+                                : "끔"
+                              : name === "블루투스"
                                 ? bluetooth
-                                  ? "打开"
-                                  : "关闭"
+                                  ? "켬"
+                                  : "끔"
                                 : name === "VPN"
-                                  ? "未连接"
-                                  : name === "蜂窝网络" || name === "个人热点"
-                                    ? "关闭"
+                                  ? "연결 안 됨"
+                                  : name === "셀룰러" || name === "개인용 핫스팟"
+                                    ? "끔"
                                     : ""}
                           </small>
                           <ChevronRight size={16} />
@@ -293,8 +293,8 @@ export function NativeSettings({
         <label className="settings-search">
           <Search size={23} />
           <input
-            aria-label="搜索设置"
-            placeholder="搜索"
+            aria-label="설정 검색"
+            placeholder="검색"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
