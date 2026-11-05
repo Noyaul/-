@@ -29,9 +29,16 @@
       "icon": ""
     },
     "safari",
-    "notes",
+    {
+      "id": "notes",
+      "name": "스토리",
+      "installed": true,
+      "visible": true,
+      "dock": false,
+      "folder": "",
+      "icon": ""
+    },
     "calendar",
-    "story",
     "mail",
     "clock",
     "reminders",
