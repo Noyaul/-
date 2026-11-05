@@ -648,6 +648,188 @@
         ],
         "additionalProperties": false
       }
+    },
+    "narrative": {
+      "type": "object",
+      "properties": {
+        "characters": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "lead-1",
+                  "lead-2",
+                  "lead-3",
+                  "lead-4",
+                  "lead-5",
+                  "lead-6"
+                ]
+              },
+              "name": {
+                "default": "",
+                "type": "string"
+              },
+              "avatar": {
+                "default": "",
+                "type": "string"
+              },
+              "bio": {
+                "default": "",
+                "type": "string"
+              },
+              "revealAtChapterId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9_.-]*$"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "avatar",
+              "bio"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "sharedChapters": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9_.-]*$"
+              },
+              "title": {
+                "default": "",
+                "type": "string"
+              },
+              "summary": {
+                "default": "",
+                "type": "string"
+              },
+              "order": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              "prerequisites": {
+                "default": [],
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z][a-zA-Z0-9_.-]*$"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "summary",
+              "order",
+              "prerequisites"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "routes": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "route-1",
+                  "route-2",
+                  "route-3",
+                  "route-4",
+                  "route-5",
+                  "route-6"
+                ]
+              },
+              "characterId": {
+                "type": "string",
+                "enum": [
+                  "lead-1",
+                  "lead-2",
+                  "lead-3",
+                  "lead-4",
+                  "lead-5",
+                  "lead-6"
+                ]
+              },
+              "title": {
+                "default": "",
+                "type": "string"
+              },
+              "chapters": {
+                "default": [],
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z][a-zA-Z0-9_.-]*$"
+                    },
+                    "title": {
+                      "default": "",
+                      "type": "string"
+                    },
+                    "summary": {
+                      "default": "",
+                      "type": "string"
+                    },
+                    "order": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 9007199254740991
+                    },
+                    "prerequisites": {
+                      "default": [],
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z][a-zA-Z0-9_.-]*$"
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "summary",
+                    "order",
+                    "prerequisites"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "id",
+              "characterId",
+              "title",
+              "chapters"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "characters",
+        "sharedChapters",
+        "routes"
+      ],
+      "additionalProperties": false
     }
   },
   "required": [
