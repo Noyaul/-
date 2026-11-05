@@ -52,14 +52,14 @@ describe("device layout", () => {
     expect(homeEntries(l)[0].key).toBe(before[1]);
     expect(validateLayout(JSON.parse(JSON.stringify(l)), w)).toEqual(l);
   });
-  it("rejects foreign work and unknown apps and overfilled Dock", () => {
+  it("rejects foreign work and overfilled Dock, and drops apps removed from the story", () => {
     const w = work(),
       l = defaultLayout(w);
     l.workId = "wrong";
     expect(() => validateLayout(l, w)).toThrow();
     l.workId = w.id;
     l.apps[0].id = "arbitrary";
-    expect(() => validateLayout(l, w)).toThrow();
+    expect(validateLayout(l, w).apps.some((a) => a.id === "arbitrary")).toBe(false);
     const t = defaultLayout(w);
     t.apps.slice(0, 5).forEach((a) => {
       a.installed = true;
