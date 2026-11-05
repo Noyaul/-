@@ -1,0 +1,426 @@
+{
+  "characters": [
+    {
+      "id": "lead-1",
+      "name": "SHOTARO",
+      "avatar": "",
+      "bio": "Saki 独立咖啡店合伙人、店长，27岁（暂定）。与主控认识约8个月，是熟客与店长。亲切温柔，记得主控常点的饮品和栗子的名字；喜欢分享咖啡、天气与店铺日常，常用表情包，偶尔发送语音。攻略关键词：温柔、主动、细节、偏爱。Saki 有两层，一楼为咖啡操作区和吧台，二楼有靠窗座位；定期更换播放列表并售卖少量咖啡豆与周边。",
+      "revealAtChapterId": "shared-1"
+    },
+    {
+      "id": "lead-2",
+      "name": "EUNSEOK",
+      "avatar": "",
+      "bio": "同公司战略企划部职员，28岁（暂定），与主控认识约1年，是跨部门同事。工作讲效率，不喜欢无效沟通；话少、冷幽默、擅长吐槽，关心别人时通常语气平常。养有马尔济斯查理。与主控因项目合作熟悉，之后逐渐发展出工作外聊天。特殊支线「狗狗家长临时联络处」必须是主控与 Eunseok 的 KakaoTalk 双人私人聊天，不设置群聊。攻略关键词：吐槽、边界感、默默关心。",
+      "revealAtChapterId": "shared-1"
+    },
+    {
+      "id": "lead-3",
+      "name": "SUNGCHAN",
+      "avatar": "",
+      "bio": "广告公司项目负责人，27岁（暂定），与主控认识约3个月，是品牌项目合作方对接人。阳光、热情、直球，擅长沟通，喜欢足球和健身；消息积极，常发语音、运动与日常照片，会主动询问周末安排。养有马尔济斯冬天。与主控从项目会议和工作沟通逐渐发展出私人话题。攻略关键词：直球、热情、主动、胜负欲。与 Eunseok 因品牌项目相识，两人的主动与克制形成对照。",
+      "revealAtChapterId": "shared-1"
+    },
+    {
+      "id": "lead-4",
+      "name": "WONBIN",
+      "avatar": "",
+      "bio": "视觉设计公司职员，26岁（暂定），喜欢摄影、逛展与音乐，常拍城市街景、建筑、光影和生活细节。是主控前男友的朋友，两年前在朋友聚会上见过主控，当时因她有恋人而尊重边界，没有越界。故事开始前约一个月，两人在小区公园重逢；他以相机镜头盖掉落为契机自然搭话，之后发现彼此住在同一小区。前期克制、少主动发消息，喜欢用照片表达；隐藏信息：他曾留意主控的遛狗时间以确认她是否仍住附近，不能在故事前期揭露。攻略关键词：多年暗恋、克制、试探、占有欲。路线核心是重新认识现在的主控，而非干涉她过去的恋情。",
+      "revealAtChapterId": "shared-2"
+    },
+    {
+      "id": "lead-5",
+      "name": "SOHEE",
+      "avatar": "",
+      "bio": "品牌宣传部门实习生，24岁（暂定），已成年大学毕业生，与主控认识约2周，是同部门前后辈。活泼、直率、分享欲强，喜欢唱歌和音乐；常连续发送多条消息、使用可爱表情和贴图，喜欢得到主控肯定，也会用玩笑试探态度。工作上经验不足但学习能力好。实习期结束并进入正式工作阶段后，才进入平等的正式攻略阶段。攻略关键词：活泼、直率、分享欲、反差、依赖感。",
+      "revealAtChapterId": "shared-1"
+    },
+    {
+      "id": "lead-6",
+      "name": "ANTON",
+      "avatar": "",
+      "bio": "音乐专业大学毕业生、音乐工作室助理，23岁（暂定），是主控好友的亲弟弟，从小认识但并不熟悉。安静、感性、细腻，喜欢作曲、钢琴、游泳和听音乐；通过歌曲链接、音乐作品和日常照片表达自己，回复不一定快但内容认真，不喜欢被当成小孩子。对主控有自己的坚持，会主动提出真正意义上的约会。攻略关键词：青涩年下、精神共鸣、安静、细腻、慢热。",
+      "revealAtChapterId": "shared-1"
+    }
+  ],
+  "sharedChapters": [
+    {
+      "id": "shared-1",
+      "title": "日常的裂隙",
+      "summary": "时间：8月上旬。建立主控在首尔的工作、生活、居住环境与手机系统；Shotaro、Eunseok、Sungchan 已在主控生活中，Sohee 正式入职，Anton 通过好友聚会重新进入日常。Wonbin 尚未正式出现在联系人列表中。",
+      "order": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "shared-2",
+      "title": "偶然发生之前",
+      "summary": "时间：8月中旬。Wonbin 在公园摄影时与正在遛栗子的主控重逢；通过栗子重新建立联系，并意外发现住在同一小区，随后解锁 Wonbin 的 KakaoTalk。",
+      "order": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "shared-3",
+      "title": "季节交替的时候",
+      "summary": "时间：8月下旬。六位男主全部解锁；查理、冬天与栗子开始产生交集；Saki 成为重要公共场景；逐渐揭露六人之间的共同好友关系。玩家开始自由选择聊天和约会，各人物好感度系统从此正式展开。",
+      "order": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "shared-4",
+      "title": "被记住的日期",
+      "summary": "9月4日生日特殊章节。六位男主都知道主控生日，并以各自方式祝福；出现六人关系交织的特殊事件。玩家选择生日当天最想见的人，不同好感度、此前聊天记录与选择影响礼物、隐藏剧情及特殊群像事件。",
+      "order": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "shared-5",
+      "title": "雨季没有预告",
+      "summary": "时间：9月上旬。六人之间开始察觉彼此与主控的关系；Wonbin 两年前的暗恋逐渐浮出水面；Sungchan 的主动与 Eunseok 的克制形成对照；Shotaro 意识到关系不再只是熟客与店长；Sohee 与 Anton 争取独立于原有身份的关系。群像剧情与个人路线逐渐交织。",
+      "order": 5,
+      "prerequisites": []
+    },
+    {
+      "id": "shared-6",
+      "title": "灯火尚未熄灭",
+      "summary": "时间：9月中下旬。各角色进入独立攻略分支，玩家做出关系选择；根据前期行为、角色专属条件与隐藏事件，决定个人 HE、BE、隐藏结局或群像特殊结局是否可达。",
+      "order": 6,
+      "prerequisites": []
+    }
+  ],
+  "routes": [
+    {
+      "id": "route-1",
+      "characterId": "lead-1",
+      "title": "SHOTARO｜Saki 店长",
+      "chapters": [
+        {
+          "id": "shotaro-1",
+          "title": "初识",
+          "summary": "主控成为 Saki 常客，建立熟客与店长之间自然亲切的日常联系。",
+          "order": 1,
+          "prerequisites": [
+            "shared-6"
+          ]
+        },
+        {
+          "id": "shotaro-2",
+          "title": "熟悉",
+          "summary": "两人开始在非营业时间聊天，分享咖啡、天气与生活小事。",
+          "order": 2,
+          "prerequisites": []
+        },
+        {
+          "id": "shotaro-3",
+          "title": "暧昧",
+          "summary": "Shotaro 主动为主控预留座位，熟悉的照顾开始显得特别。",
+          "order": 3,
+          "prerequisites": []
+        },
+        {
+          "id": "shotaro-4",
+          "title": "心动",
+          "summary": "主控发现自己的专属咖啡杯，意识到自己被认真记住。",
+          "order": 4,
+          "prerequisites": []
+        },
+        {
+          "id": "shotaro-5",
+          "title": "冲突",
+          "summary": "主控误以为 Shotaro 对所有熟客都一样，产生关系上的误会。",
+          "order": 5,
+          "prerequisites": []
+        },
+        {
+          "id": "shotaro-6",
+          "title": "告白",
+          "summary": "Saki 打烊后，两个人第一次认真谈论彼此的感情。",
+          "order": 6,
+          "prerequisites": []
+        }
+      ]
+    },
+    {
+      "id": "route-2",
+      "characterId": "lead-2",
+      "title": "EUNSEOK｜跨部门同事",
+      "chapters": [
+        {
+          "id": "eunseok-1",
+          "title": "初识",
+          "summary": "因跨部门工作项目频繁联系，从普通同事关系开始熟悉。",
+          "order": 1,
+          "prerequisites": [
+            "shared-6"
+          ]
+        },
+        {
+          "id": "eunseok-2",
+          "title": "熟悉",
+          "summary": "两个人开始在工作以外聊天，逐渐形成互相吐槽的相处方式。",
+          "order": 2,
+          "prerequisites": []
+        },
+        {
+          "id": "eunseok-3",
+          "title": "解锁：查理与栗子",
+          "summary": "查理与栗子在小区附近相遇；开启两个人的 KakaoTalk 私人聊天「狗狗家长临时联络处」，交换狗狗照片与遛狗信息。",
+          "order": 3,
+          "prerequisites": []
+        },
+        {
+          "id": "eunseok-4",
+          "title": "暧昧",
+          "summary": "Eunseok 开始主动分享生活；两人逐渐形成固定遛狗时间，借狗狗话题联系彼此。",
+          "order": 4,
+          "prerequisites": []
+        },
+        {
+          "id": "eunseok-5",
+          "title": "冲突",
+          "summary": "主控误以为 Eunseok 只是把自己当普通同事。",
+          "order": 5,
+          "prerequisites": []
+        },
+        {
+          "id": "eunseok-6",
+          "title": "告白",
+          "summary": "一次普通的下班同行，让两个人的关系发生变化。",
+          "order": 6,
+          "prerequisites": []
+        }
+      ]
+    },
+    {
+      "id": "route-3",
+      "characterId": "lead-3",
+      "title": "SUNGCHAN｜合作方项目负责人",
+      "chapters": [
+        {
+          "id": "sungchan-1",
+          "title": "初识",
+          "summary": "在品牌项目会议上相识，建立合作方与视觉宣传负责人的工作联系。",
+          "order": 1,
+          "prerequisites": [
+            "shared-6"
+          ]
+        },
+        {
+          "id": "sungchan-2",
+          "title": "熟悉",
+          "summary": "工作沟通频率增加，Sungchan 开始在工作话题之外分享日常。",
+          "order": 2,
+          "prerequisites": []
+        },
+        {
+          "id": "sungchan-3",
+          "title": "解锁：冬天与栗子",
+          "summary": "冬天与栗子第一次见面；两人一起遛狗，Sungchan 主动提出帮忙照看栗子。",
+          "order": 3,
+          "prerequisites": []
+        },
+        {
+          "id": "sungchan-4",
+          "title": "暧昧",
+          "summary": "Sungchan 开始主动邀请主控参加非工作活动，直球心意逐渐明显。",
+          "order": 4,
+          "prerequisites": []
+        },
+        {
+          "id": "sungchan-5",
+          "title": "冲突",
+          "summary": "工作关系与私人关系之间出现界限问题。",
+          "order": 5,
+          "prerequisites": []
+        },
+        {
+          "id": "sungchan-6",
+          "title": "告白",
+          "summary": "Sungchan 主动询问主控是否愿意认真约会。",
+          "order": 6,
+          "prerequisites": []
+        }
+      ]
+    },
+    {
+      "id": "route-4",
+      "characterId": "lead-4",
+      "title": "WONBIN｜前任的朋友／摄影爱好者",
+      "chapters": [
+        {
+          "id": "wonbin-1",
+          "title": "前史",
+          "summary": "回溯两年前的前任朋友聚会：Wonbin 第一次注意到主控，但因她当时有恋人而始终尊重边界。",
+          "order": 1,
+          "prerequisites": [
+            "shared-6"
+          ]
+        },
+        {
+          "id": "wonbin-2",
+          "title": "重逢",
+          "summary": "Wonbin 在公园拍摄秋日景色时与正在遛栗子的主控重逢，以相机镜头盖掉落为契机搭话。",
+          "order": 2,
+          "prerequisites": []
+        },
+        {
+          "id": "wonbin-3",
+          "title": "接近",
+          "summary": "两人发现住在同一个小区，逐渐建立自然的联系。",
+          "order": 3,
+          "prerequisites": []
+        },
+        {
+          "id": "wonbin-4",
+          "title": "熟悉",
+          "summary": "Wonbin 开始分享摄影作品和生活照片，聊天从客套变得熟悉。",
+          "order": 4,
+          "prerequisites": []
+        },
+        {
+          "id": "wonbin-5",
+          "title": "暧昧",
+          "summary": "Wonbin 主动制造只有两个人的相处机会；隐藏的留意与试探逐渐显现，但不提前揭露全部真相。",
+          "order": 5,
+          "prerequisites": []
+        },
+        {
+          "id": "wonbin-6",
+          "title": "冲突",
+          "summary": "前任重新出现在共同朋友圈，过去的关系成为两人之间需要面对的问题。",
+          "order": 6,
+          "prerequisites": []
+        },
+        {
+          "id": "wonbin-7",
+          "title": "真相",
+          "summary": "主控逐渐发现 Wonbin 两年前就已经对自己有好感；通过旧照片、共同好友聊天与隐藏摄影备忘录拼出真相。",
+          "order": 7,
+          "prerequisites": []
+        },
+        {
+          "id": "wonbin-8",
+          "title": "告白",
+          "summary": "Wonbin 不再用偶遇和摄影作为借口，认真表达自己的感情。",
+          "order": 8,
+          "prerequisites": []
+        }
+      ]
+    },
+    {
+      "id": "route-5",
+      "characterId": "lead-5",
+      "title": "SOHEE｜公司实习生",
+      "chapters": [
+        {
+          "id": "sohee-1",
+          "title": "初识",
+          "summary": "Sohee 入职，主控作为前辈带他熟悉部门工作与项目流程。",
+          "order": 1,
+          "prerequisites": [
+            "shared-6"
+          ]
+        },
+        {
+          "id": "sohee-2",
+          "title": "熟悉",
+          "summary": "主控日常指导工作，Sohee 逐渐适应部门节奏与两人的相处方式。",
+          "order": 2,
+          "prerequisites": []
+        },
+        {
+          "id": "sohee-3",
+          "title": "解锁：下班后一起吃饭",
+          "summary": "两人下班后偶然一起吃饭，关系开始离开纯粹工作场景。",
+          "order": 3,
+          "prerequisites": []
+        },
+        {
+          "id": "sohee-4",
+          "title": "暧昧",
+          "summary": "工作之外的聊天增加，Sohee 用玩笑试探主控态度。",
+          "order": 4,
+          "prerequisites": []
+        },
+        {
+          "id": "sohee-5",
+          "title": "冲突",
+          "summary": "Sohee 担心自己始终只是被当作后辈。",
+          "order": 5,
+          "prerequisites": []
+        },
+        {
+          "id": "sohee-6",
+          "title": "转折",
+          "summary": "实习期结束，Sohee 进入正式工作阶段，双方关系有机会转向平等。",
+          "order": 6,
+          "prerequisites": []
+        },
+        {
+          "id": "sohee-7",
+          "title": "告白",
+          "summary": "Sohee 不再以工作为理由联系主控，认真表达自己的心意。",
+          "order": 7,
+          "prerequisites": []
+        }
+      ]
+    },
+    {
+      "id": "route-6",
+      "characterId": "lead-6",
+      "title": "ANTON｜好友的弟弟",
+      "chapters": [
+        {
+          "id": "anton-1",
+          "title": "前史",
+          "summary": "通过主控好友认识；小时候见过面，但主控一直把 Anton 当作朋友的弟弟。",
+          "order": 1,
+          "prerequisites": [
+            "shared-6"
+          ]
+        },
+        {
+          "id": "anton-2",
+          "title": "重逢",
+          "summary": "在朋友聚会中再次见面，成年后的 Anton 重新进入主控的生活。",
+          "order": 2,
+          "prerequisites": []
+        },
+        {
+          "id": "anton-3",
+          "title": "熟悉",
+          "summary": "Anton 开始分享音乐与兴趣，通过歌曲和细节建立精神共鸣。",
+          "order": 3,
+          "prerequisites": []
+        },
+        {
+          "id": "anton-4",
+          "title": "暧昧",
+          "summary": "Anton 主动邀请主控听自己制作的音乐，逐渐表达特别的在意。",
+          "order": 4,
+          "prerequisites": []
+        },
+        {
+          "id": "anton-5",
+          "title": "冲突",
+          "summary": "主控仍习惯把 Anton 当成小孩，Anton 需要表达自己不希望一直被这样看待。",
+          "order": 5,
+          "prerequisites": []
+        },
+        {
+          "id": "anton-6",
+          "title": "转折",
+          "summary": "Anton 坚定表达自己对关系的想法，不因年龄差而放弃争取。",
+          "order": 6,
+          "prerequisites": []
+        },
+        {
+          "id": "anton-7",
+          "title": "告白",
+          "summary": "Anton 主动提出一次真正意义上的约会。",
+          "order": 7,
+          "prerequisites": []
+        }
+      ]
+    }
+  ]
+}
