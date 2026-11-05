@@ -75,16 +75,29 @@ export function validateNarrativeReferences(narrative: Narrative): string[] {
       const path = `routes.${routeIndex}.chapters.${chapterIndex}`;
       addChapter(chapter, path);
       chapter.prerequisites.forEach((requiredId, prerequisiteIndex) => {
-        if (!sharedIds.has(requiredId) && !routeChapterIds.has(requiredId))
+        if (!sharedIds.has(requiredId) && !routeChapterIds.has(requiredId)) {
           errors.push(`${path}.prerequisites.${prerequisiteIndex}: 前置章节不存在或属于其他路线`);
+        } else {
+          const prerequisite = narrative.sharedChapters.find((item) => item.id === requiredId)
+            ?? route.chapters.find((item) => item.id === requiredId);
+          if (prerequisite && route.chapters.some((item) => item.id === chapter.id) &&
+              prerequisite.id !== chapter.id && route.chapters.some((item) => item.id === requiredId) &&
+              prerequisite.order >= chapter.order)
+            errors.push(`${path}.prerequisites.${prerequisiteIndex}: 路线前置章节必须排在当前章节之前`);
+          if (requiredId === chapter.id)
+            errors.push(`${path}.prerequisites.${prerequisiteIndex}: 章节不能依赖自身`);
+        }
       });
     });
   });
 
   narrative.sharedChapters.forEach((chapter, index) => {
     chapter.prerequisites.forEach((requiredId, prerequisiteIndex) => {
-      if (!sharedIds.has(requiredId))
+      const prerequisite = narrative.sharedChapters.find((item) => item.id === requiredId);
+      if (!prerequisite)
         errors.push(`sharedChapters.${index}.prerequisites.${prerequisiteIndex}: 公共前置章节不存在`);
+      else if (prerequisite.order >= chapter.order)
+        errors.push(`sharedChapters.${index}.prerequisites.${prerequisiteIndex}: 前置章节必须排在当前章节之前`);
     });
   });
 
