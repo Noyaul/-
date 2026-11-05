@@ -455,8 +455,24 @@ export function CalendarSkin(p: Props) {
           ))}
           {Array.from({ length: days }, (_, i) => (
             <button
-              className={day === i + 1 ? "selected" : ""}
+              className={[
+                day === i + 1 ? "selected" : "",
+                month === 8 &&
+                i + 1 === 4 &&
+                p.items.some((item) => meta(item, "birthday") === "true")
+                  ? "birthday-day"
+                  : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
               key={i}
+              aria-label={
+                month === 8 &&
+                i + 1 === 4 &&
+                p.items.some((item) => meta(item, "birthday") === "true")
+                  ? "9月4日，玩家生日"
+                  : `${month + 1}月${i + 1}日`
+              }
               onClick={() => setDay(i + 1)}
             >
               {i + 1}
