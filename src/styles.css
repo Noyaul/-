@@ -4922,17 +4922,30 @@ label {
 
 /* Player birthday marker in the in-phone calendar. */
 .calendar-event.birthday-event {
-  border-left: 3px solid #e75d78;
-  padding-left: 9px;
+  border: 1px solid #f2a1b5;
+  border-left: 5px solid #e83f68;
+  border-radius: 10px;
+  margin: 6px 10px;
+  padding: 13px 12px;
+  width: calc(100% - 20px);
+  background: linear-gradient(100deg, #fff0f4 0%, #fff 72%);
+}
+.calendar-event.birthday-event strong {
+  color: #b91f4b;
+  font-size: 14px;
+  font-weight: 800;
 }
 .calendar-birthday-tag {
   display: inline-block;
   margin-left: 6px;
   padding: 2px 6px;
   border-radius: 999px;
-  background: #ffe8ed;
-  color: #c63d5c;
-  font-size: 9px;
+  background: #b91f4b;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  box-shadow: 0 1px 4px #b91f4b33;
   vertical-align: middle;
 }
 .x-player-profile {
