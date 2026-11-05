@@ -47,8 +47,7 @@ jobs:
         run: |
           set -euo pipefail
           deployments="$(gh api --paginate "repos/${GITHUB_REPOSITORY}/deployments?environment=github-pages&per_page=100" --jq '.[] | [.id, .sha] | @tsv')"
-          while IFS=
-\\t' read -r deployment_id deployment_sha; do
+          while read -r deployment_id deployment_sha; do
             [ -n "${deployment_id:-}" ] || continue
             [ "$deployment_sha" = "$GITHUB_SHA" ] && continue
             latest_state="$(gh api "repos/${GITHUB_REPOSITORY}/deployments/$deployment_id/statuses?per_page=1" --jq '.[0].state // "none"')"
