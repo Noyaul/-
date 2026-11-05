@@ -9,6 +9,24 @@
     <title>FoundPhone Player</title>
   </head>
   <body>
+    <script>
+      // Remove an older offline worker once so GitHub Pages cannot keep serving
+      // the previous phone bundle after an update.
+      (() => {
+        const marker = "foundphone-runtime-refresh-v2";
+        try {
+          if (sessionStorage.getItem(marker)) return;
+          sessionStorage.setItem(marker, "1");
+        } catch {}
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.getRegistrations().then((registrations) => {
+            if (!registrations.length) return;
+            Promise.all(registrations.map((registration) => registration.unregister()))
+              .then(() => location.reload());
+          });
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/player.tsx"></script>
   </body>
