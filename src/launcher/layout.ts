@@ -75,8 +75,10 @@ export function validateLayout(raw: unknown, input: Work) {
   const w = ensureAppStore(input);
   const layout = layoutSchema.parse(raw);
   if (layout.workId !== w.id) throw Error("布局属于其他作品");
-  const known = new Set(w.apps.map((a) => a.id));
-  // Drop apps removed from the current story instead of rejecting the saved layout.
+  // Only apps explicitly installed by the current story may retain saved home-screen state.
+  // The registry still knows uninstalled apps, so filtering by all registry IDs would
+  // accidentally resurrect apps removed from installedApps via stale localStorage.
+  const known = new Set(w.apps.filter((a) => a.installed).map((a) => a.id));
   layout.apps = layout.apps.filter((a) => known.has(a.id));
   if (new Set(layout.apps.map((a) => a.id)).size !== layout.apps.length)
     throw Error("App ID重复");
