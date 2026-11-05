@@ -40,11 +40,11 @@ type Props = {
   clearApp: (id: string) => void;
 };
 const widgetLabels = {
-  calendar: "日历",
-  clock: "时钟",
-  weather: "天气",
-  notes: "备忘录",
-  battery: "电池",
+  calendar: "캘린더",
+  clock: "시계",
+  weather: "날씨",
+  notes: "메모",
+  battery: "배터리",
 };
 const widgetApp = {
   calendar: "calendar",
@@ -69,13 +69,13 @@ function WidgetFace({
       {widget.type === "calendar" ? (
         <>
           <span className="widget-red">
-            {new Intl.DateTimeFormat("zh-CN", {
+            {new Intl.DateTimeFormat("ko-KR", {
               weekday: "long",
               timeZone: "UTC",
             }).format(date)}
           </span>
           <b className="widget-day">{date.getUTCDate()}</b>
-          <small>{work.data.calendar?.[0]?.title || "今天没有日程"}</small>
+          <small>{work.data.calendar?.[0]?.title || "오늘은 일정이 없습니다"}</small>
         </>
       ) : widget.type === "clock" ? (
         <>
@@ -85,10 +85,10 @@ function WidgetFace({
         </>
       ) : widget.type === "weather" ? (
         <>
-          <small>{weather?.title || "未添加城市"}</small>
+          <small>{weather?.title || "도시를 추가하세요"}</small>
           <b>{weather?.meta.temperature || "—"}°</b>
           <CloudSun size={27} />
-          <small>{weather?.meta.condition || "暂无天气数据"}</small>
+          <small>{weather?.meta.condition || "날씨 정보 없음"}</small>
         </>
       ) : widget.type === "notes" ? (
         <>
