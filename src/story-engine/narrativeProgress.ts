@@ -13,7 +13,14 @@ export function initialNarrativeProgress(narrative?: Narrative): NarrativeProgre
   if (!narrative) return undefined;
   return {
     completedSharedChapters: [],
-    completedRouteChapters: Object.fromEntries(routeIds.map((id) => [id, []])) as NarrativeProgress["completedRouteChapters"],
+    completedRouteChapters: {
+      "route-1": [],
+      "route-2": [],
+      "route-3": [],
+      "route-4": [],
+      "route-5": [],
+      "route-6": [],
+    },
     discoveredCharacterIds: [],
   };
 }
