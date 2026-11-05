@@ -1408,12 +1408,12 @@
 
 /* Player lock screen: horizontal clock/date row matching the supplied reference. */
 .phone-screen.wallpaper-custom-pair {
-  background-image: url("../assets/beijing.png");
+  background-image: url("./assets/beijing.png");
   background-position: center;
   background-size: cover;
 }
 .phone-screen.wallpaper-custom-pair.is-locked {
-  background-image: url("../assets/beijing.png");
+  background-image: url("./assets/beijing.png");
   background-position: center;
   background-size: cover;
 }
