@@ -115,7 +115,7 @@ describe("six-route narrative structure", () => {
   it("requires reveal chapters to belong to the shared story", () => {
     const source = copy();
     const narrative = blankNarrative();
-    narrative.characters[0].revealAtChapterId = "chapter-1";
+    Object.assign(narrative.characters[0], { revealAtChapterId: "chapter-1" });
     Object.assign(source, { narrative });
     expect(() => compileStory(source)).toThrow("角色揭示章节必须属于公共主线");
   });
