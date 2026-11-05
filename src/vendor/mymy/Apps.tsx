@@ -654,6 +654,10 @@ export function MymyX(p: SkinProps) {
       : marks.includes(id);
   const toggle = (id: string, v: string[], set: (x: string[]) => void) =>
     set(v.includes(id) ? v.filter((x) => x !== id) : [...v, id]);
+  const visibleItems =
+    tab === "个人主页"
+      ? p.items.filter((i) => i.sender === p.owner || i.meta.local === "true")
+      : p.items.filter((i) => (i.title + i.body).includes(query));
   return (
     <div
       className={"mymy-ui mymy-x " + (dark ? "x-reference-dark" : "")}
@@ -665,21 +669,23 @@ export function MymyX(p: SkinProps) {
             <ArrowLeft />
           </button>
           <div className="kzxlg">𝕏</div>
-          <button aria-label="切换X外观" onClick={() => setDark(!dark)}>
+          <button aria-label="打开个人主页" onClick={() => setTab("个人主页")}>
             <User />
           </button>
         </header>
-        <div className="kzxtb">
-          {["为你推荐", "正在关注", "添加 +", "时间"].map((t) => (
-            <button
-              className={t === tab ? "on" : ""}
-              key={t}
-              onClick={() => setTab(t)}
-            >
-              {t}
-            </button>
-          ))}
-        </div>
+        {tab !== "个人主页" && (
+          <div className="kzxtb">
+            {["为你推荐", "正在关注"].map((t) => (
+              <button
+                className={t === tab ? "on" : ""}
+                key={t}
+                onClick={() => setTab(t)}
+              >
+                {t}
+              </button>
+            ))}
+          </div>
+        )}
         {tab === "搜索" && (
           <input
             className="mymy-search"
@@ -689,97 +695,93 @@ export function MymyX(p: SkinProps) {
             placeholder="搜索"
           />
         )}
+        {tab === "个人主页" && (
+          <section className="x-player-profile">
+            <Avatar name={p.owner || "我"} />
+            <div>
+              <strong>{p.owner || "我"}</strong>
+              <small>个人主页</small>
+            </div>
+          </section>
+        )}
         <div className="kzxfd">
-          {p.items
-            .filter((i) => (i.title + i.body).includes(query))
-            .map((i) => (
-              <article className="kzxt" key={i.id}>
-                <Avatar name={i.sender} src={i.avatar} />
-                <div className="kzxb">
-                  <div className="kzxn">
-                    <b>{i.sender}</b>
-                    <small>
-                      @{i.meta.handle || "user"} · {i.time.slice(-5)}
-                    </small>
-                    <em>
-                      <MoreHorizontal size={18} />
-                    </em>
-                  </div>
+          {visibleItems.map((i) => (
+            <article className="kzxt" key={i.id}>
+              <Avatar name={i.sender} src={i.avatar} />
+              <div className="kzxb">
+                <div className="kzxn">
+                  <b>{i.sender}</b>
+                  <small>
+                    @{i.meta.handle || "user"} · {i.time.slice(-5)}
+                  </small>
+                  <em><MoreHorizontal size={18} /></em>
+                </div>
+                <button
+                  className="kzxx"
+                  onClick={() => {
+                    read(p, i);
+                    p.onItem(i);
+                  }}
+                >
+                  {i.body}
+                </button>
+                {i.media && (
+                  <button className="kzxv" aria-label="打开媒体" onClick={() => p.onItem(i)}>
+                    <Media item={i} />
+                  </button>
+                )}
+                <div className="kzxac">
+                  <button aria-label={"评论" + i.title} onClick={() => p.onItem(i)}>
+                    <MessageCircle />{i.comments.length}
+                  </button>
                   <button
-                    className="kzxx"
+                    aria-label={"转发" + i.title}
+                    aria-pressed={reposts.includes(i.id)}
+                    onClick={() => toggle(i.id, reposts, setReposts)}
+                  >
+                    <Repeat2 />{reposts.includes(i.id) ? 1 : 0}
+                  </button>
+                  <button
+                    aria-label={"点赞" + i.title}
+                    aria-pressed={isLiked(i.id)}
                     onClick={() => {
-                      read(p, i);
-                      p.onItem(i);
+                      toggle(i.id, likes, setLikes);
+                      p.onUi?.("liked-" + i.id, !isLiked(i.id));
                     }}
                   >
-                    {i.body}
+                    <Heart fill={isLiked(i.id) ? "#f91880" : "none"} />
+                    {i.likes + (isLiked(i.id) ? 1 : 0)}
                   </button>
-                  {i.media && (
-                    <button
-                      className="kzxv"
-                      aria-label="打开媒体"
-                      onClick={() => p.onItem(i)}
-                    >
-                      <Media item={i} />
-                    </button>
-                  )}
-                  <div className="kzxac">
-                    <button
-                      aria-label={"评论" + i.title}
-                      onClick={() => p.onItem(i)}
-                    >
-                      <MessageCircle />
-                      {i.comments.length}
-                    </button>
-                    <button
-                      aria-label={"转发" + i.title}
-                      aria-pressed={reposts.includes(i.id)}
-                      onClick={() => toggle(i.id, reposts, setReposts)}
-                    >
-                      <Repeat2 />
-                      {reposts.includes(i.id) ? 1 : 0}
-                    </button>
-                    <button
-                      aria-label={"点赞" + i.title}
-                      aria-pressed={isLiked(i.id)}
-                      onClick={() => {
-                        toggle(i.id, likes, setLikes);
-                        p.onUi?.("liked-" + i.id, !isLiked(i.id));
-                      }}
-                    >
-                      <Heart fill={isLiked(i.id) ? "#f91880" : "none"} />
-                      {i.likes + (isLiked(i.id) ? 1 : 0)}
-                    </button>
-                    <span>
-                      <BarChart2 />
-                      {i.meta.views || "—"}
-                    </span>
-                    <button
-                      aria-label={"收藏" + i.title}
-                      aria-pressed={isSaved(i.id)}
-                      onClick={() => {
-                        toggle(i.id, marks, setMarks);
-                        p.onUi?.("saved-" + i.id, !isSaved(i.id));
-                      }}
-                    >
-                      <Bookmark />
-                    </button>
-                    <button aria-label="分享" onClick={() => p.onItem(i)}>
-                      <Share />
-                    </button>
-                  </div>
+                  <span><BarChart2 />{i.meta.views || "—"}</span>
+                  <button
+                    aria-label={"收藏" + i.title}
+                    aria-pressed={isSaved(i.id)}
+                    onClick={() => {
+                      toggle(i.id, marks, setMarks);
+                      p.onUi?.("saved-" + i.id, !isSaved(i.id));
+                    }}
+                  >
+                    <Bookmark />
+                  </button>
+                  <button aria-label="分享" onClick={() => p.onItem(i)}><Share /></button>
                 </div>
-              </article>
-            ))}
-          {!p.items.length && <Blank />}
+              </div>
+            </article>
+          ))}
+          {!visibleItems.length && <Blank />}
         </div>
         <nav className="kzxnav">
-          {[Home, Search, Bell, MessageCircle].map((Icon, n) => (
+          {[Home, Search, Bell, MessageCircle, User].map((Icon, n) => (
             <button
               key={n}
-              aria-label={["时间线", "搜索", "通知", "私信"][n]}
-              onClick={() => n < 2 && setTab(n ? "搜索" : "推荐")}
-              disabled={n > 1}
+              aria-label={["时间线", "搜索", "通知", "私信", "个人主页"][n]}
+              className={n === 4 && tab === "个人主页" ? "selected" : ""}
+              onClick={() => {
+                if (n === 0) setTab("推荐");
+                else if (n === 1) setTab("搜索");
+                else if (n === 4) setTab("个人主页");
+              }}
+              disabled={n === 2 || n === 3}
             >
               <Icon />
             </button>
