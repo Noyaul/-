@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import narrativeSource from "../../stories/riize-romance/narrative.json";
+import activeStorySource from "../../stories/template/story.json";
 import {
   narrativeSchema,
   validateNarrativeReferences,
@@ -7,6 +8,10 @@ import {
 
 describe("RIIZE romance narrative source", () => {
   const narrative = narrativeSchema.parse(narrativeSource);
+
+  it("keeps the dedicated narrative source synchronized with the active phone story", () => {
+    expect(activeStorySource.narrative).toEqual(narrativeSource);
+  });
 
   it("keeps the six character slots and routes in the agreed order", () => {
     expect(narrative.characters.map((character) => character.name)).toEqual([
