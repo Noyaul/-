@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { narrativeSchema } from "./story-engine/narrativeSchema";
+import { initialNarrativeProgress, type NarrativeProgress } from "./story-engine/narrativeProgress";
 export const uid = () => crypto.randomUUID();
 export const itemSchema = z.object({
   id: z.string(),
@@ -158,6 +159,7 @@ export type Runtime = {
   messages: Record<string, Item[]>;
   time: string;
   trace: string[];
+  narrativeProgress?: NarrativeProgress;
 };
 export function initialRuntime(w: Work): Runtime {
   return {
@@ -182,6 +184,7 @@ export function initialRuntime(w: Work): Runtime {
     messages: {},
     time: w.phone.time,
     trace: [],
+    narrativeProgress: initialNarrativeProgress(w.narrative),
   };
 }
 export function makeItem(partial: Partial<Item> = {}): Item {
