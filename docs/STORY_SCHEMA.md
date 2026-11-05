@@ -10,6 +10,7 @@
 |contacts|id、name、phone、avatar、bio；owner 保留给机主|
 |chats|稳定会话id、app、title、participants、messages；消息需要id/body，可带senderId、time、media、kind等|
 |content|按 App ID 保存 Item 数组；记录id/title/body/time、hidden、password、unlock、folder、meta等|
+|narrative|可选的六角色叙事结构：固定六个角色槽位、公共主线章节、六条独立角色路线；角色可绑定公共章节作为揭示节点，路线章节可依赖公共章节或本路线前置章节|
 |variables|字符串/数字/布尔初值|
 |events|节点id/label/type/event/target、conditions、actions、next、delayMs；参见原 WORK_FORMAT|
 |tests|name、steps、ending、expectUnlocked；所有ending节点至少一个通过的实际引擎路径|
@@ -20,4 +21,4 @@
 
 媒体仅支持safeMedia允许的内嵌data URL格式。禁止HTML/JS脚本；富文本为安全结构化JSON。作品脚本是公开静态数据，谜题密码不属于安全保密机制。
 
-默认空白模板：stories/blank/story.json。引擎回归样例位于tests/fixtures/story-example，不作为内置作品。自然语言原稿：tests/fixtures/story-example/STORY.md。只改故事数据就能改变手机内容。
+`narrative` 不填时保持旧版脚本行为；填写时必须包含 lead-1 至 lead-6、route-1 至 route-6，路线与角色按序一一对应。章节 ID 全局唯一；角色揭示章节必须属于公共主线；某条角色路线不能依赖其他角色路线的章节。当前阶段只定义静态剧情结构，通关进度、选项标记、好感度和结局状态由后续运行时阶段实现。\n\n默认空白模板：stories/blank/story.json。引擎回归样例位于tests/fixtures/story-example，不作为内置作品。自然语言原稿：tests/fixtures/story-example/STORY.md。只改故事数据就能改变手机内容。
