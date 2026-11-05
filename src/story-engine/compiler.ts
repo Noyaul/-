@@ -9,6 +9,7 @@ import {
 } from "../schema";
 import { registry } from "../registry";
 import { validateGraph } from "../engine";
+import { narrativeSchema, validateNarrativeReferences } from "./narrativeSchema";
 const id = z.string().regex(/^[a-zA-Z][a-zA-Z0-9_.-]*$/, "需要稳定的英文 ID");
 const content = itemSchema
   .partial()
@@ -29,6 +30,7 @@ export const storySchema = z
     title: z.string().min(1),
     description: z.string().default(""),
     revision: z.number().int().positive().default(1),
+    narrative: narrativeSchema.optional(),
     phone: workSchema.shape.phone
       .partial()
       .extend({
@@ -111,6 +113,10 @@ export function compileStory(raw: unknown): { story: Story; work: Work } {
   const fail = (p: string, m: string): never => {
     throw new StoryIssue(p, m);
   };
+  if (s.narrative) {
+    const narrativeErrors = validateNarrativeReferences(s.narrative);
+    if (narrativeErrors.length) fail("narrative", narrativeErrors.join("; "));
+  }
   const names = new Set<string>();
   const unique = (v: string, p: string) => {
     if (names.has(v)) fail(p, "重复 ID: " + v);
@@ -309,6 +315,7 @@ export function compileStory(raw: unknown): { story: Story; work: Work } {
     nodes,
     variables: s.variables,
     mode: nodes.length ? "mixed" : "explore",
+    ...(s.narrative ? { narrative: s.narrative } : {}),
   });
   return { story: s, work };
 }
