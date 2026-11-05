@@ -52,6 +52,17 @@ describe("device layout", () => {
     expect(homeEntries(l)[0].key).toBe(before[1]);
     expect(validateLayout(JSON.parse(JSON.stringify(l)), w)).toEqual(l);
   });
+  it("does not resurrect apps uninstalled by the current story from saved layout", () => {
+    const w = work();
+    const l = defaultLayout(w);
+    const removed = l.apps.find((a) => a.id === "wechat");
+    expect(removed).toBeTruthy();
+    removed!.installed = true;
+    removed!.visible = true;
+    const next = validateLayout(l, w);
+    expect(next.apps.find((a) => a.id === "wechat")?.installed).toBe(false);
+    expect(homeEntries(next).some((entry) => entry.key === "wechat")).toBe(false);
+  });
   it("rejects foreign work and overfilled Dock, and drops apps removed from the story", () => {
     const w = work(),
       l = defaultLayout(w);
