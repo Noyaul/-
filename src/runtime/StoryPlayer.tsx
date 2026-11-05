@@ -10,23 +10,6 @@ type PlayerProfile = {
   birthday: "09-04";
 };
 
-function profileKey(workId: string) {
-  return `foundphone-player-profile-v2:${workId}`;
-}
-
-function readProfile(workId: string): PlayerProfile | null {
-  try {
-    const raw = localStorage.getItem(profileKey(workId));
-    if (!raw) return null;
-    const value = JSON.parse(raw) as Partial<PlayerProfile>;
-    if (typeof value.nickname === "string" && value.nickname.trim()) {
-      return { nickname: value.nickname.trim(), birthday: "09-04" };
-    }
-  } catch {
-    // Ignore invalid or unavailable local profile data and ask the player again.
-  }
-  return null;
-}
 
 function StoryPlayer() {
   const [work, setWork] = useState<Work | null>(null);
@@ -58,7 +41,9 @@ function StoryPlayer() {
         document.title =
           w.title === "捡手机" ? "捡手机" : w.title + " · 捡手机";
         setWork(w);
-        setProfile(readProfile(w.id));
+        // Player identity is session-only: a full page refresh asks for the nickname again.
+        setProfile(null);
+        setNickname("");
         setProfileReady(true);
       })
       .catch((e) => {
@@ -76,12 +61,6 @@ function StoryPlayer() {
     }
     if (!work) return;
     const next: PlayerProfile = { nickname: cleanNickname, birthday: "09-04" };
-    try {
-      localStorage.setItem(profileKey(work.id), JSON.stringify(next));
-    } catch {
-      setFormError("无法保存玩家资料，请检查浏览器的本地存储设置。");
-      return;
-    }
     setFormError("");
     setProfile(next);
   };
@@ -168,7 +147,7 @@ function StoryPlayer() {
                   <span aria-hidden="true">↗</span>
                 </button>
                 <p className="player-profile-footnote">
-                  资料仅保存在当前浏览器中
+                  刷新页面后需要重新填写昵称
                 </p>
               </form>
             </div>
