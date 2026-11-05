@@ -5,7 +5,7 @@ import { AppArtwork } from "./AppArtwork";
 import type { Work } from "./schema";
 export function notificationContent(text: string, apps: Work["apps"]) {
   const separator = text.search(/[:：]/);
-  const sender = separator > 0 ? text.slice(0, separator) : "信息";
+  const sender = separator > 0 ? text.slice(0, separator) : "메시지";
   const app = apps.find((a) => a.name === sender);
   return {
     title: sender,
@@ -66,7 +66,7 @@ export function SystemNotifications({
               {!compact && (
                 <button
                   className="notice-remove"
-                  aria-label="清除通知"
+                  aria-label="알림 지우기"
                   onClick={() => onDismiss(index)}
                 >
                   <X size={15} />
@@ -81,7 +81,7 @@ export function SystemNotifications({
           className="notice-expand"
           onClick={() => setExpanded(!expanded)}
         >
-          {expanded ? "收起" : notices.length + " 条通知"}
+          {expanded ? "접기" : notices.length + "개 알림"}
         </button>
       )}
     </div>
