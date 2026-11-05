@@ -96,6 +96,22 @@ export function validateLayout(raw: unknown, input: Work) {
     store.folder = "";
   }
 
+  if (w.id === "ui-test-phone-v2" && layout.previewLayoutRevision < 1) {
+    const legacyApps = ["wechat", "douyin", "instagram"];
+    for (const app of layout.apps) {
+      if (
+        legacyApps.includes(app.id) ||
+        ["中国", "国内", "国际", "海外", "国内App", "国际App"].includes(
+          app.folder,
+        )
+      ) {
+        app.folder = "";
+        delete layout.positions[app.id];
+      }
+    }
+    layout.order = layout.order.filter((id) => !legacyApps.includes(id));
+    layout.previewLayoutRevision = 1;
+  }
   const entries = homeEntries(layout),
     packed = packHome(entries, layout.positions);
   for (const entry of entries) {
