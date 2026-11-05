@@ -103,7 +103,6 @@ export function NativeSettings({
           </div>
         );
       case "Wi-Fi":
-      case "Wi-Fi":
         return (
           <>
             <div className="settings-group">
@@ -111,7 +110,7 @@ export function NativeSettings({
             </div>
             {wifi && (
               <>
-                <p className="settings-section-label">我的网络</p>
+                <p className="settings-section-label">나의 네트워크</p>
                 <div className="settings-group">
                   <div className="settings-native-row">
                     <Check size={18} color="#007aff" />
@@ -120,7 +119,7 @@ export function NativeSettings({
                   </div>
                 </div>
                 <p className="settings-page-caption">
-                  连接状态仅用于作品中的虚拟手机。
+                  연결 상태는 작품 속 가상 휴대폰에만 적용됩니다.
                 </p>
               </>
             )}
@@ -145,7 +144,7 @@ export function NativeSettings({
               {toggle("저전력 모드", lowPower, setLowPower)}
             </div>
             <p className="settings-page-caption">
-              低电量模式仅改变虚拟设备状态。
+              저전력 모드는 가상 기기의 상태만 변경합니다.
             </p>
           </>
         );
@@ -162,13 +161,13 @@ export function NativeSettings({
           <div className="settings-group">
             {work.apps
               .filter((a) => a.installed)
-              .map((a) => row(a.name, `${work.data[a.id]?.length || 0} 项`))}
+              .map((a) => row(a.name, `${work.data[a.id]?.length || 0}개 항목`))}
           </div>
         );
       case "소프트웨어 업데이트":
         return (
           <p className="settings-page-caption">
-            iOS 18.0 · 此为作品中的虚拟系统，不下载系统更新。
+            iOS 18.0 · 작품 속 가상 시스템으로, 업데이트를 다운로드하지 않습니다.
           </p>
         );
       default:
@@ -185,7 +184,7 @@ export function NativeSettings({
               )}
             </div>
             {!items.some((i) => i.folder === nav.page) && (
-              <p className="settings-page-caption">此作品没有配置更多选项。</p>
+              <p className="settings-page-caption">이 작품에는 추가 옵션이 설정되어 있지 않습니다.</p>
             )}
           </>
         );
@@ -202,7 +201,7 @@ export function NativeSettings({
           sub()
         ) : (
           <>
-            <h1>设置</h1>
+            <h1>설정</h1>
             {!query && (
               <button
                 className="settings-account"
@@ -211,7 +210,7 @@ export function NativeSettings({
                 <span>{work.phone.owner.slice(0, 1)}</span>
                 <div>
                   <strong>{work.phone.owner}</strong>
-                  <small>Apple 账户、iCloud 与更多</small>
+                  <small>Apple 계정, iCloud 등</small>
                 </div>
                 <ChevronRight size={17} />
               </button>
@@ -285,7 +284,7 @@ export function NativeSettings({
           ))}
         {creator && (
           <button className="phone-add" onClick={onSettings}>
-            编辑系统配置
+            시스템 설정 편집
           </button>
         )}
       </NavigationPage>
