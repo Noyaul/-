@@ -6,10 +6,11 @@ on:
 permissions:
   contents: read
   pages: write
+  deployments: write
   id-token: write
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -37,6 +38,27 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Clear stale GitHub Pages deployments left in the in_progress state.
+      # GitHub rejects a new Pages deployment while any older deployment is active.
+      - name: Clean up stale Pages deployments
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          deployments="$(gh api --paginate "repos/${GITHUB_REPOSITORY}/deployments?environment=github-pages&per_page=100" --jq '.[] | [.id, .sha] | @tsv')"
+          while IFS=
+\\t' read -r deployment_id deployment_sha; do
+            [ -n "${deployment_id:-}" ] || continue
+            [ "$deployment_sha" = "$GITHUB_SHA" ] && continue
+            latest_state="$(gh api "repos/${GITHUB_REPOSITORY}/deployments/$deployment_id/statuses?per_page=1" --jq '.[0].state // "none"')"
+            if [ "$latest_state" = "in_progress" ]; then
+              echo "Deactivating stale Pages deployment $deployment_id ($deployment_sha)"
+              gh api --method POST "repos/${GITHUB_REPOSITORY}/deployments/$deployment_id/statuses" \
+                -f state=inactive \
+                -f description="Superseded by the current GitHub Pages deployment."
+            fi
+          done <<< "$deployments"
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
