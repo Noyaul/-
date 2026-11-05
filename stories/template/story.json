@@ -1,11 +1,11 @@
 {
   "scriptVersion": 1,
   "id": "ui-test-phone-v2",
-  "title": "捡手机",
-  "description": "仅用于界面测试，不含剧情",
-  "revision": 3,
+  "title": "분실폰",
+  "description": "화면 테스트용 · 스토리 없음",
+  "revision": 4,
   "phone": {
-    "owner": "机主",
+    "owner": "민준",
     "date": "2026-10-25",
     "time": "09:41",
     "battery": 94,
@@ -56,16 +56,16 @@
   "contacts": [
     {
       "id": "test-contact",
-      "name": "测试联系人",
+      "name": "친구",
       "phone": "",
-      "bio": "这是一条测试内容。"
+      "bio": "테스트용 콘텐츠입니다."
     }
   ],
   "chats": [
     {
       "id": "test-chat-messages",
       "app": "messages",
-      "title": "测试会话",
+      "title": "테스트 채팅",
       "participants": [
         "owner",
         "test-contact"
@@ -73,7 +73,7 @@
       "messages": [
         {
           "id": "test-message-messages",
-          "body": "这是一条测试消息。",
+          "body": "테스트 메시지입니다.",
           "senderId": "test-contact"
         }
       ]
@@ -81,7 +81,7 @@
     {
       "id": "test-chat-kakao",
       "app": "kakao",
-      "title": "测试会话",
+      "title": "테스트 채팅",
       "participants": [
         "owner",
         "test-contact"
@@ -89,12 +89,12 @@
       "messages": [
         {
           "id": "test-message-kakao",
-          "body": "这是一条测试消息。",
+          "body": "테스트 메시지입니다.",
           "senderId": "test-contact"
         },
         {
           "id": "test-reply-kakao",
-          "body": "这是一条测试回复。",
+          "body": "테스트 답장입니다.",
           "senderId": "owner"
         }
       ]
@@ -105,8 +105,8 @@
       {
         "id": "test-item-phone",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -115,8 +115,8 @@
       {
         "id": "test-item-contacts",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -125,8 +125,8 @@
       {
         "id": "test-item-photos",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -135,8 +135,8 @@
       {
         "id": "test-item-camera",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -145,8 +145,8 @@
       {
         "id": "test-item-safari",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -155,8 +155,8 @@
       {
         "id": "test-item-notes",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -165,8 +165,8 @@
       {
         "id": "test-item-calendar",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -175,8 +175,8 @@
       {
         "id": "test-item-mail",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -185,8 +185,8 @@
       {
         "id": "test-item-clock",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -195,8 +195,8 @@
       {
         "id": "test-item-reminders",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -205,8 +205,8 @@
       {
         "id": "test-item-files",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -215,8 +215,8 @@
       {
         "id": "test-item-music",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -225,8 +225,8 @@
       {
         "id": "test-item-maps",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -235,8 +235,8 @@
       {
         "id": "test-item-weather",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -245,8 +245,8 @@
       {
         "id": "test-item-wallet",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -255,8 +255,8 @@
       {
         "id": "test-item-health",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -265,8 +265,8 @@
       {
         "id": "test-item-find",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -275,8 +275,8 @@
       {
         "id": "test-item-calculator",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -285,8 +285,8 @@
       {
         "id": "test-item-settings",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -295,8 +295,8 @@
       {
         "id": "test-item-instagram",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -305,8 +305,8 @@
       {
         "id": "test-item-tiktok",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -315,8 +315,8 @@
       {
         "id": "test-item-twitter",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -325,8 +325,8 @@
       {
         "id": "test-item-youtube",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -335,8 +335,8 @@
       {
         "id": "test-item-spotify",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -345,8 +345,8 @@
       {
         "id": "test-item-netflix",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -355,8 +355,8 @@
       {
         "id": "test-item-pinterest",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       }
@@ -365,55 +365,55 @@
       {
         "id": "test-item-threads",
         "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "body": "테스트용 콘텐츠입니다.",
+        "sender": "테스트 사용자",
         "kind": "text",
         "meta": {}
       },
       {
         "id": "test-threads-message-1",
-        "title": "测试会话1",
-        "body": "这是一条测试消息。",
-        "sender": "测试联系人1",
+        "title": "친구와의 채팅",
+        "body": "테스트 메시지입니다.",
+        "sender": "친구",
         "folder": "私信"
       },
       {
         "id": "test-threads-activity-1",
         "title": "测试动态1",
         "body": "这是一条测试回复动态。",
-        "sender": "测试用户1",
+        "sender": "민준",
         "meta": {
           "activityType": "reply"
         }
       },
       {
         "id": "test-threads-message-2",
-        "title": "测试会话2",
-        "body": "这是一条测试消息。",
-        "sender": "测试联系人2",
+        "title": "친구와의 채팅",
+        "body": "테스트 메시지입니다.",
+        "sender": "친구",
         "folder": "私信"
       },
       {
         "id": "test-threads-activity-2",
         "title": "测试动态2",
         "body": "这是一条测试回复动态。",
-        "sender": "测试用户2",
+        "sender": "친구",
         "meta": {
           "activityType": "reply"
         }
       },
       {
         "id": "test-threads-message-3",
-        "title": "测试会话3",
-        "body": "这是一条测试消息。",
-        "sender": "测试联系人3",
+        "title": "친구와의 채팅",
+        "body": "테스트 메시지입니다.",
+        "sender": "친구",
         "folder": "私信"
       },
       {
         "id": "test-threads-activity-3",
         "title": "测试动态3",
         "body": "这是一条测试回复动态。",
-        "sender": "测试用户3",
+        "sender": "친구",
         "meta": {
           "activityType": "reply"
         }
@@ -423,7 +423,7 @@
       {
         "id": "test-appstore",
         "title": "测试内容",
-        "body": "这是一条测试内容。"
+        "body": "테스트용 콘텐츠입니다."
       }
     ]
   },
