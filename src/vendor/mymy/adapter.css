@@ -628,3 +628,131 @@
   width: 25px;
   height: 25px;
 }
+
+
+/* KakaoTalk conversation polish — scoped to the in-thread view only. */
+.mymy-ui.mymy-kakao:has(.msgs) {
+  background: #b4c9dc;
+  color: #17212b;
+}
+.mymy-ui.mymy-kakao .kzth {
+  min-height: 52px;
+  padding: 8px 14px;
+  background: #becfe0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
+.mymy-ui.mymy-kakao .kzth > button:first-child {
+  width: 30px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+}
+.mymy-ui.mymy-kakao .kzname {
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -0.2px;
+  color: #18232d;
+}
+.mymy-ui.mymy-kakao .kzpill {
+  width: 42px;
+  height: 34px;
+  justify-content: center;
+  padding: 0;
+  color: #253544;
+  background: rgba(232, 241, 249, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+}
+.mymy-ui.mymy-kakao .msgs.kk {
+  padding: 12px 12px 16px;
+  gap: 5px;
+  background: #b4c9dc;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.mymy-ui.mymy-kakao .kzm {
+  gap: 6px;
+}
+.mymy-ui.mymy-kakao .kzm.first {
+  margin-top: 10px;
+}
+.mymy-ui.mymy-kakao .kzm.kzot {
+  padding-left: 44px;
+  padding-right: 34px;
+}
+.mymy-ui.mymy-kakao .kzm.kzmy {
+  padding-left: 34px;
+  padding-right: 0;
+}
+.mymy-ui.mymy-kakao .kzmn {
+  color: #34485a;
+  font-size: 11px;
+  font-weight: 500;
+  margin: 0 0 4px 1px;
+}
+.mymy-ui.mymy-kakao .kzmav .catalog-avatar,
+.mymy-ui.mymy-kakao .kzmav .kzka,
+.mymy-ui.mymy-kakao .kzmav .se {
+  width: 32px;
+  height: 32px;
+  border-radius: 11px;
+}
+.mymy-ui.mymy-kakao .kzbub {
+  max-width: min(80%, 270px);
+  padding: 9px 12px;
+  border-radius: 13px;
+  font-size: 14px;
+  line-height: 1.42;
+  letter-spacing: -0.12px;
+  box-shadow: 0 1px 1px rgba(33, 54, 72, 0.045);
+}
+.mymy-ui.mymy-kakao .kzm.kzot .kzbub {
+  background: #fff;
+  color: #17212b;
+  border-top-left-radius: 5px;
+}
+.mymy-ui.mymy-kakao .kzm.kzmy .kzbub {
+  background: #fee500;
+  color: #171717;
+  border-top-right-radius: 5px;
+}
+.mymy-ui.mymy-kakao .kzt {
+  color: #53697c;
+  font-size: 9.5px;
+  line-height: 1.35;
+  padding-bottom: 2px;
+}
+.mymy-ui.mymy-kakao .kzinp {
+  margin: 4px 10px 26px;
+  padding: 5px;
+  min-height: 48px;
+  gap: 7px;
+  background: rgba(220, 234, 246, 0.88);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.82),
+    0 1px 3px rgba(42, 65, 86, 0.08);
+}
+.mymy-ui.mymy-kakao .kzinp input {
+  height: 36px;
+  min-height: 36px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #17212b;
+  font-size: 14px;
+}
+.mymy-ui.mymy-kakao .kzinp input::placeholder {
+  color: #72869a;
+  opacity: 1;
+}
+.mymy-ui.mymy-kakao .kzinp > button:first-child {
+  flex: 0 0 32px;
+}
+.mymy-ui.mymy-kakao .kzinp > button:last-child {
+  flex: 0 0 32px;
+  background: rgba(255, 255, 255, 0.48);
+  color: #8495a5;
+}
+.mymy-ui.mymy-kakao .kzinp > button:last-child.go {
+  background: #fee500;
+  color: #171717;
+}
