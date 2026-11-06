@@ -26,6 +26,7 @@ import {
   Wallet,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import yongsanMap from "../assets/Riize/map/yongsan-map.png";
 import { download } from "../io";
 import { safeMedia, type Item } from "../schema";
 import {
@@ -834,13 +835,18 @@ function LocationMap({
   items,
   onItem,
   find = false,
+  mapImage,
 }: {
   items: Item[];
   onItem: (i: Item) => void;
   find?: boolean;
+  mapImage?: string;
 }) {
   return (
-    <div className={`fiction-map ${find ? "find-map" : ""}`}>
+    <div className={`fiction-map ${find ? "find-map" : ""} ${mapImage ? "has-custom-map" : ""}`}>
+      {mapImage ? (
+        <img src={mapImage} alt="首尔龙山区地图" />
+      ) : (
       <svg viewBox="0 0 300 300" aria-label="原创虚构地图">
         <rect width="300" height="300" fill="#e4e5d8" />
         {[35, 100, 190, 260].map((n) => (
@@ -859,6 +865,7 @@ function LocationMap({
         />
         <rect x="205" y="112" width="42" height="65" rx="7" fill="#bdcfac" />
       </svg>
+      )}
       {items.map((i, n) => (
         <button
           key={i.id}
@@ -881,7 +888,7 @@ export function MapsSkin(p: Props) {
   return (
     <div className="catalog-skin native-maps">
       <Header p={p} />
-      <LocationMap items={items} onItem={p.onItem} />
+      <LocationMap items={items} onItem={p.onItem} mapImage={yongsanMap} />
       <div className="map-sheet">
         <SearchBox value={q} set={setQ} placeholder="搜索虚构地点" />
         <div className="map-places">
