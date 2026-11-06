@@ -1084,10 +1084,15 @@
   overflow: clip;
   background: #e5e8dc;
 }
-.fiction-map > svg {
+.fiction-map > svg,
+.fiction-map > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+.fiction-map.has-custom-map {
+  background: #e5e8dc;
 }
 .map-pin {
   position: absolute;
