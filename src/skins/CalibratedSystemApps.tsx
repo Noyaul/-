@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import weatherDay from "../assets/Riize/weather/weather-day.png";
+import weatherNight from "../assets/Riize/weather/weather-night.png";
 import {
   Heart,
   Users,
@@ -378,6 +380,13 @@ export function WeatherSkin(p: Props) {
     [mode, setMode] = useState("temperature"),
     [sheet, setSheet] = useState(""),
     [query, setQuery] = useState("");
+  const [localHour, setLocalHour] = useState(() => new Date().getHours());
+  useEffect(() => {
+    const updateHour = () => setLocalHour(new Date().getHours());
+    const timer = window.setInterval(updateHour, 60_000);
+    return () => window.clearInterval(timer);
+  }, []);
+  const isDay = localHour >= 6 && localHour < 18;
   const item = p.items[index] || p.items[0],
     hourly = listMeta(item, "hourly"),
     daily = listMeta(item, "daily");
@@ -391,8 +400,14 @@ export function WeatherSkin(p: Props) {
     <div
       className="catalog-skin native-weather calibrated-weather"
       data-empty={!item}
+      data-time-of-day={isDay ? "day" : "night"}
+      style={{
+        backgroundImage: `url(${isDay ? weatherDay : weatherNight})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <div className="weather-stars" aria-hidden="true" />
+      <div className="weather-stars" aria-hidden="true" style={{ opacity: isDay ? 0.12 : 0.65 }} />
       <div className="weather-native-scroll">
         <section className="weather-native-current">
           <small>{item ? meta(item, "locationLabel", "城市") : "天气"}</small>
