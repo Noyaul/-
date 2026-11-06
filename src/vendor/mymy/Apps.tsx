@@ -26,15 +26,29 @@ import {
   Compass,
 } from "lucide-react";
 import type { SkinProps } from "../../AppSkins";
+import sungchanAvatar from "../../assets/Riize/avatars/sungchan-avatar.png";
+import shotaroAvatar from "../../assets/Riize/avatars/shotaro-avatar.png";
+import eunseokAvatar from "../../assets/Riize/avatars/eunseok-avatar.png";
 import { Avatar, Media } from "../../skins/shared";
 import { useSkinState } from "../../skinState";
 import { makeItem, type Item } from "../../schema";
 import "./ui.css";
 import "./adapter.css";
+function avatarFor(name: string) {
+  const key = name.trim().toLowerCase().replace(/[ _-]/g, "");
+  if (["sungchan", "성찬"].some((v) => key.includes(v))) return sungchanAvatar;
+  if (["shotaro", "쇼타로"].some((v) => key.includes(v))) return shotaroAvatar;
+  if (["eunseok", "은석"].some((v) => key.includes(v))) return eunseokAvatar;
+  return "";
+}
+function withKakaoAvatar(item: Item): Item {
+  return item.avatar ? item : { ...item, avatar: avatarFor(item.sender || item.title) };
+}
 function grouped(items: Item[]) {
-  return [...new Set(items.map((i) => i.title))].map((title) => ({
+  const withAvatars = items.map(withKakaoAvatar);
+  return [...new Set(withAvatars.map((i) => i.title))].map((title) => ({
     title,
-    items: items.filter((i) => i.title === title),
+    items: withAvatars.filter((i) => i.title === title),
   }));
 }
 export function messageRun(items: Item[], index: number) {
@@ -69,7 +83,7 @@ export function MymyKakao(p: SkinProps) {
     [menu, setMenu] = useState(false);
   const list = grouped(p.items),
     messages = [
-      ...p.items.filter((i) => i.title === p.thread),
+      ...p.items.filter((i) => i.title === p.thread).map(withKakaoAvatar),
       ...sent.flatMap((raw, index) => {
         try {
           const entry: unknown = JSON.parse(raw);
