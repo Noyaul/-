@@ -172,7 +172,7 @@ export function MymyKakao(p: SkinProps) {
                     {m.media ? <Media item={m} /> : m.body}
                   </button>
                   {!m.outgoing && run.last && (
-                    <span className="kzt">{m.time.slice(-5)}</span>
+                    <span className="kzt">{m.meta.history === "true" ? "" : m.time.slice(-5)}</span>
                   )}
                 </div>
                 </Fragment>
