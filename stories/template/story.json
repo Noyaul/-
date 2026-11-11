@@ -644,12 +644,14 @@
         "sender": "EUNSEOK",
         "time": "2026-07-28 00:00",
         "avatar": "",
-        "kind": "text",
+        "kind": "image",
         "media": "",
         "outgoing": false,
         "meta": {
           "history": "true",
-          "historyDate": "2026-07-28"
+          "historyDate": "2026-07-28",
+          "historyImage": "eunseok",
+          "imagePosition": "54%"
         }
       },
       {
@@ -989,12 +991,14 @@
         "sender": "SUNGCHAN",
         "time": "2026-07-21 00:00",
         "avatar": "",
-        "kind": "text",
+        "kind": "image",
         "media": "",
         "outgoing": false,
         "meta": {
           "history": "true",
-          "historyDate": "2026-07-21"
+          "historyDate": "2026-07-21",
+          "historyImage": "sungchan",
+          "imagePosition": "26%"
         }
       },
       {
@@ -1694,12 +1698,14 @@
         "sender": "SHOTARO",
         "time": "2026-07-24 00:00",
         "avatar": "",
-        "kind": "text",
+        "kind": "image",
         "media": "",
         "outgoing": false,
         "meta": {
           "history": "true",
-          "historyDate": "2026-07-24"
+          "historyDate": "2026-07-24",
+          "historyImage": "shotaro",
+          "imagePosition": "51%"
         }
       },
       {
