@@ -756,3 +756,19 @@
   background: #fee500;
   color: #171717;
 }
+
+.mymy-kakao .kzdate {
+  align-self: center;
+  flex: none;
+  margin: 12px auto 8px;
+  padding: 5px 12px;
+  border-radius: 18px;
+  background: rgba(95, 119, 137, 0.38);
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.mymy-kakao .kzm .kzt:empty {
+  display: none;
+}
