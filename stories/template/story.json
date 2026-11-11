@@ -63,10 +63,25 @@
   ],
   "contacts": [
     {
-      "id": "test-contact",
-      "name": "친구",
+      "id": "riize-eunseok",
+      "name": "EUNSEOK",
       "phone": "",
-      "bio": "테스트용 콘텐츠입니다."
+      "avatar": "",
+      "bio": "战略企划部同事"
+    },
+    {
+      "id": "riize-sungchan",
+      "name": "SUNGCHAN",
+      "phone": "",
+      "avatar": "",
+      "bio": "品牌项目合作方"
+    },
+    {
+      "id": "riize-shotaro",
+      "name": "SHOTARO",
+      "phone": "",
+      "avatar": "",
+      "bio": "Saki 咖啡店店长"
     }
   ],
   "chats": [
@@ -432,6 +447,1493 @@
         "id": "test-appstore",
         "title": "测试内容",
         "body": "테스트용 콘텐츠입니다."
+      }
+    ],
+    "kakao": [
+      {
+        "id": "history-eunseok-001",
+        "title": "EUNSEOK",
+        "body": "上次会议的文件发我一下",
+        "sender": "EUNSEOK",
+        "time": "2026-07-17 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-17"
+        }
+      },
+      {
+        "id": "history-eunseok-002",
+        "title": "EUNSEOK",
+        "body": "好的，稍等",
+        "sender": "我",
+        "time": "2026-07-17 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-17"
+        }
+      },
+      {
+        "id": "history-eunseok-003",
+        "title": "EUNSEOK",
+        "body": "【项目最终版.pdf】",
+        "sender": "我",
+        "time": "2026-07-17 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-17"
+        }
+      },
+      {
+        "id": "history-eunseok-004",
+        "title": "EUNSEOK",
+        "body": "收到",
+        "sender": "EUNSEOK",
+        "time": "2026-07-17 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-17"
+        }
+      },
+      {
+        "id": "history-eunseok-005",
+        "title": "EUNSEOK",
+        "body": "你之前说的那家宠物用品店叫什么？",
+        "sender": "EUNSEOK",
+        "time": "2026-07-25 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-25"
+        }
+      },
+      {
+        "id": "history-eunseok-006",
+        "title": "EUNSEOK",
+        "body": "XX宠物用品馆",
+        "sender": "我",
+        "time": "2026-07-25 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-25"
+        }
+      },
+      {
+        "id": "history-eunseok-007",
+        "title": "EUNSEOK",
+        "body": "怎么啦？",
+        "sender": "我",
+        "time": "2026-07-25 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-25"
+        }
+      },
+      {
+        "id": "history-eunseok-008",
+        "title": "EUNSEOK",
+        "body": "想给查理买个新的牵引绳",
+        "sender": "EUNSEOK",
+        "time": "2026-07-25 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-25"
+        }
+      },
+      {
+        "id": "history-eunseok-009",
+        "title": "EUNSEOK",
+        "body": "旧的坏了",
+        "sender": "EUNSEOK",
+        "time": "2026-07-25 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-25"
+        }
+      },
+      {
+        "id": "history-eunseok-010",
+        "title": "EUNSEOK",
+        "body": "我上次买的还不错",
+        "sender": "我",
+        "time": "2026-07-25 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-25"
+        }
+      },
+      {
+        "id": "history-eunseok-011",
+        "title": "EUNSEOK",
+        "body": "可以发给你链接",
+        "sender": "我",
+        "time": "2026-07-25 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-25"
+        }
+      },
+      {
+        "id": "history-eunseok-012",
+        "title": "EUNSEOK",
+        "body": "👌🏻",
+        "sender": "EUNSEOK",
+        "time": "2026-07-25 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-25"
+        }
+      },
+      {
+        "id": "history-eunseok-013",
+        "title": "EUNSEOK",
+        "body": "（发送了一张查理的照片）",
+        "sender": "EUNSEOK",
+        "time": "2026-07-28 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-28"
+        }
+      },
+      {
+        "id": "history-eunseok-014",
+        "title": "EUNSEOK",
+        "body": "它怎么又是这个表情ㅋㅋ",
+        "sender": "我",
+        "time": "2026-07-28 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-28"
+        }
+      },
+      {
+        "id": "history-eunseok-015",
+        "title": "EUNSEOK",
+        "body": "刚刚把我的耳机弄坏了",
+        "sender": "EUNSEOK",
+        "time": "2026-07-28 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-28"
+        }
+      },
+      {
+        "id": "history-eunseok-016",
+        "title": "EUNSEOK",
+        "body": "ㅋㅋㅋㅋㅋ你骂它了？",
+        "sender": "我",
+        "time": "2026-07-28 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-28"
+        }
+      },
+      {
+        "id": "history-eunseok-017",
+        "title": "EUNSEOK",
+        "body": "嗯",
+        "sender": "EUNSEOK",
+        "time": "2026-07-28 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-28"
+        }
+      },
+      {
+        "id": "history-eunseok-018",
+        "title": "EUNSEOK",
+        "body": "所以是这个反应",
+        "sender": "EUNSEOK",
+        "time": "2026-07-28 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-28"
+        }
+      },
+      {
+        "id": "history-eunseok-019",
+        "title": "EUNSEOK",
+        "body": "ㅋㅋㅋㅋㅋㅋ",
+        "sender": "我",
+        "time": "2026-07-28 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-28"
+        }
+      },
+      {
+        "id": "history-eunseok-020",
+        "title": "EUNSEOK",
+        "body": "听说你们部门明天来新人？",
+        "sender": "EUNSEOK",
+        "time": "2026-08-02 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-02"
+        }
+      },
+      {
+        "id": "history-eunseok-021",
+        "title": "EUNSEOK",
+        "body": "对",
+        "sender": "我",
+        "time": "2026-08-02 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-02"
+        }
+      },
+      {
+        "id": "history-eunseok-022",
+        "title": "EUNSEOK",
+        "body": "好像是个实习生",
+        "sender": "我",
+        "time": "2026-08-02 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-02"
+        }
+      },
+      {
+        "id": "history-eunseok-023",
+        "title": "EUNSEOK",
+        "body": "你们部门最近挺忙的啊",
+        "sender": "EUNSEOK",
+        "time": "2026-08-02 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-02"
+        }
+      },
+      {
+        "id": "history-eunseok-024",
+        "title": "EUNSEOK",
+        "body": "所以又在招人",
+        "sender": "我",
+        "time": "2026-08-02 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-02"
+        }
+      },
+      {
+        "id": "history-eunseok-025",
+        "title": "EUNSEOK",
+        "body": "那挺好",
+        "sender": "EUNSEOK",
+        "time": "2026-08-02 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-02"
+        }
+      },
+      {
+        "id": "history-eunseok-026",
+        "title": "EUNSEOK",
+        "body": "希望他好带一点ㅋㅋ",
+        "sender": "我",
+        "time": "2026-08-02 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-02"
+        }
+      },
+      {
+        "id": "history-sungchan-027",
+        "title": "SUNGCHAN",
+        "body": "今天辛苦了！！",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-16 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-16"
+        }
+      },
+      {
+        "id": "history-sungchan-028",
+        "title": "SUNGCHAN",
+        "body": "方案我也已经看过了，很不错",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-16 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-16"
+        }
+      },
+      {
+        "id": "history-sungchan-029",
+        "title": "SUNGCHAN",
+        "body": "你那边也辛苦了",
+        "sender": "我",
+        "time": "2026-07-16 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-16"
+        }
+      },
+      {
+        "id": "history-sungchan-030",
+        "title": "SUNGCHAN",
+        "body": "终于把第一版做完了",
+        "sender": "我",
+        "time": "2026-07-16 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-16"
+        }
+      },
+      {
+        "id": "history-sungchan-031",
+        "title": "SUNGCHAN",
+        "body": "是啊ㅋㅋㅋㅋㅋ",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-16 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-16"
+        }
+      },
+      {
+        "id": "history-sungchan-032",
+        "title": "SUNGCHAN",
+        "body": "接下来应该就轻松一点了吧？",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-16 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-16"
+        }
+      },
+      {
+        "id": "history-sungchan-033",
+        "title": "SUNGCHAN",
+        "body": "希望如此ㅋㅋ",
+        "sender": "我",
+        "time": "2026-07-16 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-16"
+        }
+      },
+      {
+        "id": "history-sungchan-034",
+        "title": "SUNGCHAN",
+        "body": "今天下班早了一点！",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-21 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-21"
+        }
+      },
+      {
+        "id": "history-sungchan-035",
+        "title": "SUNGCHAN",
+        "body": "带冬天出来走走",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-21 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-21"
+        }
+      },
+      {
+        "id": "history-sungchan-036",
+        "title": "SUNGCHAN",
+        "body": "（发送了一张冬天散步的照片）",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-21 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-21"
+        }
+      },
+      {
+        "id": "history-sungchan-037",
+        "title": "SUNGCHAN",
+        "body": "这张拍的不错ㅋㅋ",
+        "sender": "我",
+        "time": "2026-07-21 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-21"
+        }
+      },
+      {
+        "id": "history-sungchan-038",
+        "title": "SUNGCHAN",
+        "body": "ㅋㅋㅋㅋㅋ",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-21 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-21"
+        }
+      },
+      {
+        "id": "history-sungchan-039",
+        "title": "SUNGCHAN",
+        "body": "冬天看起来很开心",
+        "sender": "我",
+        "time": "2026-07-21 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-21"
+        }
+      },
+      {
+        "id": "history-sungchan-040",
+        "title": "SUNGCHAN",
+        "body": "它今天走了好久",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-21 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-21"
+        }
+      },
+      {
+        "id": "history-sungchan-041",
+        "title": "SUNGCHAN",
+        "body": "那回去应该会睡得很好",
+        "sender": "我",
+        "time": "2026-07-21 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-21"
+        }
+      },
+      {
+        "id": "history-sungchan-042",
+        "title": "SUNGCHAN",
+        "body": "希望吧",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-21 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-21"
+        }
+      },
+      {
+        "id": "history-sungchan-043",
+        "title": "SUNGCHAN",
+        "body": "不然晚上又要在家里跑来跑去",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-21 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-21"
+        }
+      },
+      {
+        "id": "history-sungchan-044",
+        "title": "SUNGCHAN",
+        "body": "刚刚发的第三版你看到了吗",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-045",
+        "title": "SUNGCHAN",
+        "body": "看到了",
+        "sender": "我",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-046",
+        "title": "SUNGCHAN",
+        "body": "我这边没问题",
+        "sender": "我",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-047",
+        "title": "SUNGCHAN",
+        "body": "好！那我设计那边继续做",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-048",
+        "title": "SUNGCHAN",
+        "body": "辛苦了",
+        "sender": "我",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-049",
+        "title": "SUNGCHAN",
+        "body": "你也是",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-050",
+        "title": "SUNGCHAN",
+        "body": "对了",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-051",
+        "title": "SUNGCHAN",
+        "body": "你之前说的那个狗狗零食在哪里买的？",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-052",
+        "title": "SUNGCHAN",
+        "body": "哪个？",
+        "sender": "我",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-053",
+        "title": "SUNGCHAN",
+        "body": "你发过照片那个",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-054",
+        "title": "SUNGCHAN",
+        "body": "啊，那个是XX牌子的",
+        "sender": "我",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-055",
+        "title": "SUNGCHAN",
+        "body": "找到了！！",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-056",
+        "title": "SUNGCHAN",
+        "body": "谢谢ㅋㅋ",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-057",
+        "title": "SUNGCHAN",
+        "body": "（发送了一个贴图）",
+        "sender": "SUNGCHAN",
+        "time": "2026-07-23 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-23"
+        }
+      },
+      {
+        "id": "history-sungchan-058",
+        "title": "SUNGCHAN",
+        "body": "今天出门了吗？",
+        "sender": "SUNGCHAN",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-sungchan-059",
+        "title": "SUNGCHAN",
+        "body": "还没有，在家",
+        "sender": "我",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-sungchan-060",
+        "title": "SUNGCHAN",
+        "body": "我也在家ㅋㅋ",
+        "sender": "SUNGCHAN",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-sungchan-061",
+        "title": "SUNGCHAN",
+        "body": "冬天一直叼着牵引绳过来",
+        "sender": "SUNGCHAN",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-sungchan-062",
+        "title": "SUNGCHAN",
+        "body": "想出去玩了吧",
+        "sender": "我",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-sungchan-063",
+        "title": "SUNGCHAN",
+        "body": "应该是",
+        "sender": "SUNGCHAN",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-sungchan-064",
+        "title": "SUNGCHAN",
+        "body": "你们今天不出去吗",
+        "sender": "SUNGCHAN",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-sungchan-065",
+        "title": "SUNGCHAN",
+        "body": "晚一点可能会带栗子出去",
+        "sender": "我",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-sungchan-066",
+        "title": "SUNGCHAN",
+        "body": "那要不要一起？",
+        "sender": "SUNGCHAN",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-sungchan-067",
+        "title": "SUNGCHAN",
+        "body": "今天可能有点晚了",
+        "sender": "我",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-sungchan-068",
+        "title": "SUNGCHAN",
+        "body": "没关系！",
+        "sender": "SUNGCHAN",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-sungchan-069",
+        "title": "SUNGCHAN",
+        "body": "下次也可以",
+        "sender": "SUNGCHAN",
+        "time": "2026-08-01 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-08-01"
+        }
+      },
+      {
+        "id": "history-shotaro-070",
+        "title": "SHOTARO",
+        "body": "今天怎么没来Saki？",
+        "sender": "SHOTARO",
+        "time": "2026-07-19 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-19"
+        }
+      },
+      {
+        "id": "history-shotaro-071",
+        "title": "SHOTARO",
+        "body": "周末在家休息ㅋㅋ",
+        "sender": "我",
+        "time": "2026-07-19 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-19"
+        }
+      },
+      {
+        "id": "history-shotaro-072",
+        "title": "SHOTARO",
+        "body": "栗子今天也不想出门",
+        "sender": "我",
+        "time": "2026-07-19 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-19"
+        }
+      },
+      {
+        "id": "history-shotaro-073",
+        "title": "SHOTARO",
+        "body": "ㅋㅋㅋㅋㅋ",
+        "sender": "SHOTARO",
+        "time": "2026-07-19 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-19"
+        }
+      },
+      {
+        "id": "history-shotaro-074",
+        "title": "SHOTARO",
+        "body": "那看来今天是主人和狗狗一起休息的日子",
+        "sender": "SHOTARO",
+        "time": "2026-07-19 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-19"
+        }
+      },
+      {
+        "id": "history-shotaro-075",
+        "title": "SHOTARO",
+        "body": "不过今天店里出了新的蛋糕",
+        "sender": "SHOTARO",
+        "time": "2026-07-19 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-19"
+        }
+      },
+      {
+        "id": "history-shotaro-076",
+        "title": "SHOTARO",
+        "body": "下次来给你留一块",
+        "sender": "SHOTARO",
+        "time": "2026-07-19 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-19"
+        }
+      },
+      {
+        "id": "history-shotaro-077",
+        "title": "SHOTARO",
+        "body": "어！下次一定好好品尝！",
+        "sender": "我",
+        "time": "2026-07-19 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-19"
+        }
+      },
+      {
+        "id": "history-shotaro-078",
+        "title": "SHOTARO",
+        "body": "今天还是冰美式吗？",
+        "sender": "SHOTARO",
+        "time": "2026-07-22 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-22"
+        }
+      },
+      {
+        "id": "history-shotaro-079",
+        "title": "SHOTARO",
+        "body": "对，少冰",
+        "sender": "我",
+        "time": "2026-07-22 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-22"
+        }
+      },
+      {
+        "id": "history-shotaro-080",
+        "title": "SHOTARO",
+        "body": "知道啦ㅋㅋ",
+        "sender": "SHOTARO",
+        "time": "2026-07-22 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-22"
+        }
+      },
+      {
+        "id": "history-shotaro-081",
+        "title": "SHOTARO",
+        "body": "已经记住你的习惯了",
+        "sender": "SHOTARO",
+        "time": "2026-07-22 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-22"
+        }
+      },
+      {
+        "id": "history-shotaro-082",
+        "title": "SHOTARO",
+        "body": "（发送了一个贴图）",
+        "sender": "SHOTARO",
+        "time": "2026-07-22 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-22"
+        }
+      },
+      {
+        "id": "history-shotaro-083",
+        "title": "SHOTARO",
+        "body": "（发送了一张栗子的照片）",
+        "sender": "SHOTARO",
+        "time": "2026-07-24 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-24"
+        }
+      },
+      {
+        "id": "history-shotaro-084",
+        "title": "SHOTARO",
+        "body": "栗子今天也太可爱了吧！！！",
+        "sender": "SHOTARO",
+        "time": "2026-07-24 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-24"
+        }
+      },
+      {
+        "id": "history-shotaro-085",
+        "title": "SHOTARO",
+        "body": "刚刚拍的，给主人报备",
+        "sender": "SHOTARO",
+        "time": "2026-07-24 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-24"
+        }
+      },
+      {
+        "id": "history-shotaro-086",
+        "title": "SHOTARO",
+        "body": "哈哈哈它今天很乖哦",
+        "sender": "我",
+        "time": "2026-07-24 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-24"
+        }
+      },
+      {
+        "id": "history-shotaro-087",
+        "title": "SHOTARO",
+        "body": "在店里没有乱跑吧？",
+        "sender": "我",
+        "time": "2026-07-24 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-24"
+        }
+      },
+      {
+        "id": "history-shotaro-088",
+        "title": "SHOTARO",
+        "body": "完全没有！",
+        "sender": "SHOTARO",
+        "time": "2026-07-24 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-24"
+        }
+      },
+      {
+        "id": "history-shotaro-089",
+        "title": "SHOTARO",
+        "body": "比某些客人乖多了ㅋㅋ",
+        "sender": "SHOTARO",
+        "time": "2026-07-24 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-24"
+        }
+      },
+      {
+        "id": "history-shotaro-090",
+        "title": "SHOTARO",
+        "body": "那就好～",
+        "sender": "我",
+        "time": "2026-07-24 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-24"
+        }
+      },
+      {
+        "id": "history-shotaro-091",
+        "title": "SHOTARO",
+        "body": "辛苦你啦",
+        "sender": "我",
+        "time": "2026-07-24 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-24"
+        }
+      },
+      {
+        "id": "history-shotaro-092",
+        "title": "SHOTARO",
+        "body": "（发送了一个贴图）",
+        "sender": "SHOTARO",
+        "time": "2026-07-24 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-24"
+        }
+      },
+      {
+        "id": "history-shotaro-093",
+        "title": "SHOTARO",
+        "body": "我很乐意陪它玩呀",
+        "sender": "SHOTARO",
+        "time": "2026-07-24 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-24"
+        }
+      },
+      {
+        "id": "history-shotaro-094",
+        "title": "SHOTARO",
+        "body": "明天有空吗？",
+        "sender": "SHOTARO",
+        "time": "2026-07-31 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-31"
+        }
+      },
+      {
+        "id": "history-shotaro-095",
+        "title": "SHOTARO",
+        "body": "店里最近新进了一批咖啡豆，想让你试试",
+        "sender": "SHOTARO",
+        "time": "2026-07-31 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-31"
+        }
+      },
+      {
+        "id": "history-shotaro-096",
+        "title": "SHOTARO",
+        "body": "明天应该可以",
+        "sender": "我",
+        "time": "2026-07-31 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-31"
+        }
+      },
+      {
+        "id": "history-shotaro-097",
+        "title": "SHOTARO",
+        "body": "是什么口味的？",
+        "sender": "我",
+        "time": "2026-07-31 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": true,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-31"
+        }
+      },
+      {
+        "id": "history-shotaro-098",
+        "title": "SHOTARO",
+        "body": "保密！🤫",
+        "sender": "SHOTARO",
+        "time": "2026-07-31 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-31"
+        }
+      },
+      {
+        "id": "history-shotaro-099",
+        "title": "SHOTARO",
+        "body": "明天来就知道了ㅋㅋ",
+        "sender": "SHOTARO",
+        "time": "2026-07-31 00:00",
+        "avatar": "",
+        "kind": "text",
+        "media": "",
+        "outgoing": false,
+        "meta": {
+          "history": "true",
+          "historyDate": "2026-07-31"
+        }
       }
     ]
   },
