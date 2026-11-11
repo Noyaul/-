@@ -29,6 +29,9 @@ import type { SkinProps } from "../../AppSkins";
 import sungchanAvatar from "../../assets/Riize/avatars/sungchan-avatar.png";
 import shotaroAvatar from "../../assets/Riize/avatars/shotaro-avatar.png";
 import eunseokAvatar from "../../assets/Riize/avatars/eunseok-avatar.png";
+import eunseokHistory from "../../assets/Riize/chat/eunseok-history.png";
+import sungchanHistory from "../../assets/Riize/chat/sungchan-history.png";
+import shotaroHistory from "../../assets/Riize/chat/shotaro-history.png";
 import { Avatar, Media } from "../../skins/shared";
 import { useSkinState } from "../../skinState";
 import { makeItem, type Item } from "../../schema";
@@ -39,6 +42,12 @@ function avatarFor(name: string) {
   if (["sungchan", "성찬"].some((v) => key.includes(v))) return sungchanAvatar;
   if (["shotaro", "쇼타로"].some((v) => key.includes(v))) return shotaroAvatar;
   if (["eunseok", "은석"].some((v) => key.includes(v))) return eunseokAvatar;
+  return "";
+}
+function historyImageFor(item: Item) {
+  if (item.meta.historyImage === "eunseok") return eunseokHistory;
+  if (item.meta.historyImage === "sungchan") return sungchanHistory;
+  if (item.meta.historyImage === "shotaro") return shotaroHistory;
   return "";
 }
 function withKakaoAvatar(item: Item): Item {
@@ -166,10 +175,18 @@ export function MymyKakao(p: SkinProps) {
                     </span>
                   )}
                   <button
-                    className={"kzbub" + (m.media ? " kzimg" : "")}
+                    className={"kzbub" + (m.media || m.meta.historyImage ? " kzimg" : "")}
                     onClick={() => m.meta.local !== "true" && read(p, m)}
                   >
-                    {m.media ? <Media item={m} /> : m.body}
+                    {m.meta.historyImage ? (
+                      <div className="kzhistory-media">
+                        <img
+                          src={historyImageFor(m)}
+                          alt={m.body}
+                          style={{ objectPosition: `50% ${m.meta.imagePosition || "50%"}` }}
+                        />
+                      </div>
+                    ) : m.media ? <Media item={m} /> : m.body}
                   </button>
                   {!m.outgoing && run.last && (
                     <span className="kzt">{m.meta.history === "true" ? "" : m.time.slice(-5)}</span>
