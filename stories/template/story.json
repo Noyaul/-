@@ -63,6 +63,13 @@
   ],
   "contacts": [
     {
+      "id": "test-contact",
+      "name": "친구",
+      "phone": "",
+      "avatar": "",
+      "bio": "测试用联系人，供原有测试会话使用。"
+    },
+    {
       "id": "riize-eunseok",
       "name": "EUNSEOK",
       "phone": "",
