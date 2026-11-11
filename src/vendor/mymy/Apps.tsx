@@ -1,7 +1,7 @@
 /* React/data adapters for dudwo5/Mymy UI templates: kt/ktn/KHD/bub,
  * igHome/igProfile/igDM/igSheet, xHome. See NOTICE.txt for permission.
  * Author content, DOM globals, timers and media dependencies are excluded. */
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
   Search,
@@ -131,9 +131,19 @@ export function MymyKakao(p: SkinProps) {
           <div className="msgs kk" ref={scroll}>
             {messages.map((m, i) => {
               const run = messageRun(messages, i);
+              const date = m.time.slice(0, 10);
+              const previousDate = messages[i - 1]?.time.slice(0, 10);
+              const dateChip = date !== previousDate ? (
+                <div className="kzdate">
+                  ▦ {new Date(date + "T12:00:00").toLocaleDateString("zh-CN", {
+                    year: "numeric", month: "2-digit", day: "2-digit", weekday: "long"
+                  })}
+                </div>
+              ) : null;
               return (
+                <Fragment key={m.id}>
+                {dateChip}
                 <div
-                  key={m.id}
                   className={
                     "kzm " +
                     (m.outgoing ? "kzmy" : "kzot") +
@@ -152,7 +162,7 @@ export function MymyKakao(p: SkinProps) {
                     <span className="kzt">
                       {m.meta.unread || ""}
                       <br />
-                      {m.time.slice(-5)}
+                      {m.meta.history === "true" ? "" : m.time.slice(-5)}
                     </span>
                   )}
                   <button
@@ -165,6 +175,7 @@ export function MymyKakao(p: SkinProps) {
                     <span className="kzt">{m.time.slice(-5)}</span>
                   )}
                 </div>
+                </Fragment>
               );
             })}
             {!messages.length && <Blank />}
