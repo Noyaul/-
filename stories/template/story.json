@@ -1302,21 +1302,6 @@
         }
       },
       {
-        "id": "history-sungchan-057",
-        "title": "SUNGCHAN",
-        "body": "（发送了一个贴图）",
-        "sender": "SUNGCHAN",
-        "time": "2026-07-23 00:00",
-        "avatar": "",
-        "kind": "text",
-        "media": "",
-        "outgoing": false,
-        "meta": {
-          "history": "true",
-          "historyDate": "2026-07-23"
-        }
-      },
-      {
         "id": "history-sungchan-058",
         "title": "SUNGCHAN",
         "body": "今天出门了吗？",
@@ -1677,21 +1662,6 @@
         }
       },
       {
-        "id": "history-shotaro-082",
-        "title": "SHOTARO",
-        "body": "（发送了一个贴图）",
-        "sender": "SHOTARO",
-        "time": "2026-07-22 00:00",
-        "avatar": "",
-        "kind": "text",
-        "media": "",
-        "outgoing": false,
-        "meta": {
-          "history": "true",
-          "historyDate": "2026-07-22"
-        }
-      },
-      {
         "id": "history-shotaro-083",
         "title": "SHOTARO",
         "body": "（发送了一张栗子的照片）",
@@ -1823,21 +1793,6 @@
         "kind": "text",
         "media": "",
         "outgoing": true,
-        "meta": {
-          "history": "true",
-          "historyDate": "2026-07-24"
-        }
-      },
-      {
-        "id": "history-shotaro-092",
-        "title": "SHOTARO",
-        "body": "（发送了一个贴图）",
-        "sender": "SHOTARO",
-        "time": "2026-07-24 00:00",
-        "avatar": "",
-        "kind": "text",
-        "media": "",
-        "outgoing": false,
         "meta": {
           "history": "true",
           "historyDate": "2026-07-24"
