@@ -775,7 +775,7 @@
 
 .mymy-kakao .kzhistory-media {
   width: min(215px, 62vw);
-  aspect-ratio: 0.8;
+  aspect-ratio: 0.75;
   overflow: hidden;
   border-radius: 12px;
   background: #d7e1e8;
