@@ -31,7 +31,7 @@ import shotaroAvatar from "../../assets/Riize/avatars/shotaro-avatar.png";
 import eunseokAvatar from "../../assets/Riize/avatars/eunseok-avatar.png";
 import eunseokHistory from "../../assets/Riize/chat/eunseok-dog.webp";
 import sungchanHistory from "../../assets/Riize/chat/sungchan-walk.webp";
-import shotaroHistory from "../../assets/Riize/chat/shotaro-history.png";
+import shotaroHistory from "../../assets/Riize/chat/shotaro-dog.webp";
 import { Avatar, Media } from "../../skins/shared";
 import { useSkinState } from "../../skinState";
 import { makeItem, type Item } from "../../schema";
